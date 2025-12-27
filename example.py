@@ -7,6 +7,7 @@ Quick Pinecone connectivity check:
 
 import os
 import sys
+import constants as c
 from pinecone import Pinecone
 
 
@@ -35,30 +36,24 @@ def main() -> None:
     api_key = require_env("PINECONE_API_KEY")
     host = require_env("PINECONE_HOST")
     index_name = require_env("PINECONE_INDEX")
-    dim = int(os.getenv("EMBED_DIM", "1536"))
+    dim = int(os.getenv("EMBED_DIM", c.EMBED_DIM))
 
     pc = Pinecone(api_key=api_key)
     index = pc.Index(host=host)
 
-    # quick health check
     stats = index.describe_index_stats()
     print("Index stats:", stats)
 
-    # upsert a test vector with the right dimension
     test_id = "ping-1"
-    # must include non-zero values; Pinecone rejects all-zero vectors
     vec = [0.001] * dim
     index.upsert(vectors=[(test_id, vec, {"note": "ping", "index": index_name})])
     print("Upserted", test_id)
 
-    # fetch it back
     fetched = index.fetch(ids=[test_id])
     print("Fetched:", fetched)
 
-    # clean up the test vector to avoid clutter
     index.delete(ids=[test_id])
     print("Deleted test vector", test_id)
-
 
 if __name__ == "__main__":
     try:
