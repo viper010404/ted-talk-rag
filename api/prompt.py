@@ -1,4 +1,8 @@
-"""Vercel handler for POST /api/prompt: thin wrapper around rag.RAGService."""
+"""POST /api/prompt endpoint handler.
+
+Accepts JSON payload with 'question' and optional 'top_k' parameter.
+Returns RAG-augmented response with retrieved context.
+"""
 
 from http.server import BaseHTTPRequestHandler
 import json
@@ -6,7 +10,6 @@ import os
 import sys
 from pathlib import Path
 
-# Add parent directory to path to import modules
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from rag import RAGService, RAGEnv, load_dotenv, require_env
@@ -14,7 +17,9 @@ from config import get_config
 
 
 class handler(BaseHTTPRequestHandler):
+    """HTTP handler for RAG prompt requests."""
     def do_POST(self):
+        """Validate input, run RAG, and return the response payload."""
         length = int(self.headers.get("Content-Length", 0))
         try:
             data = json.loads(self.rfile.read(length) or b"{}")
@@ -24,7 +29,7 @@ class handler(BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(json.dumps({"error": "invalid json"}).encode())
             return
-        
+
         question = (data.get("question") or "").strip()
         if not question:
             self.send_response(400)
@@ -36,11 +41,10 @@ class handler(BaseHTTPRequestHandler):
         try:
             load_dotenv()
             cfg = get_config()
-            # Allow optional top_k override from request
             top_k = data.get("top_k", cfg.top_k)
             if not isinstance(top_k, int) or top_k < 1 or top_k > 30:
                 top_k = cfg.top_k
-            
+
             env = RAGEnv(
                 models_api_key=require_env("MODELS_API_KEY"),
                 model_base_url=require_env("MODEL_BASE_URL"),
@@ -50,7 +54,7 @@ class handler(BaseHTTPRequestHandler):
             )
             service = RAGService(env=env, top_k=top_k)
             result = service.answer(question)
-            
+
             self.send_response(200)
             self.send_header("Content-Type", "application/json")
             self.end_headers()
@@ -60,4 +64,3 @@ class handler(BaseHTTPRequestHandler):
             self.send_header("Content-Type", "application/json")
             self.end_headers()
             self.wfile.write(json.dumps({"error": str(exc)}).encode())
-        return

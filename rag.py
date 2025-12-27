@@ -1,9 +1,8 @@
-"""Core RAG pipeline utilities: retrieval, prompt building, and chat call."""
+"""Core RAG pipeline: retrieval, prompt construction, and chat completion."""
 
 from __future__ import annotations
 
 import os
-import json
 from dataclasses import dataclass
 from typing import List, Tuple, Dict, Any
 
@@ -29,6 +28,7 @@ SYSTEM_PROMPT = (
 
 
 def load_dotenv(path: str = ".env") -> None:
+    """Load environment variables from a .env file if present."""
     if not os.path.exists(path):
         return
     with open(path, "r", encoding="utf-8") as f:
@@ -41,6 +41,7 @@ def load_dotenv(path: str = ".env") -> None:
 
 
 def require_env(name: str) -> str:
+    """Fetch a required environment variable or raise."""
     val = os.getenv(name)
     if not val:
         raise RuntimeError(f"Missing required env var: {name}")
@@ -49,6 +50,7 @@ def require_env(name: str) -> str:
 
 @dataclass
 class RAGEnv:
+    """Runtime credentials and routing details for the RAG service."""
     models_api_key: str
     model_base_url: str
     pinecone_api_key: str
@@ -57,12 +59,15 @@ class RAGEnv:
 
 
 class RAGService:
+    """End-to-end retrieval-augmented generation over the TED dataset."""
     def __init__(self, env: RAGEnv, top_k: int) -> None:
+        """Initialize the service with credentials and retrieval depth."""
         self.env = env
         self.top_k = top_k
         self.pc = Pinecone(api_key=env.pinecone_api_key)
 
     def _embed(self, text: str, model: str) -> List[float]:
+        """Call the embedding endpoint to vectorize a query or chunk."""
         url = self.env.model_base_url.rstrip("/") + "/embeddings"
         headers = {"Authorization": f"Bearer {self.env.models_api_key}", "Content-Type": "application/json"}
         payload = {"model": model, "input": text}
@@ -73,16 +78,18 @@ class RAGService:
         return data["data"][0]["embedding"]
 
     def _retrieve(self, vector: List[float]) -> List[Tuple[str, Dict[str, Any], float]]:
+        """Query Pinecone for the nearest chunks and return ids, metadata, and scores."""
         index = self.pc.Index(host=self.env.pinecone_host)
         res = index.query(vector=vector, top_k=self.top_k, include_metadata=True, namespace=self.env.namespace)
         matches = res.get("matches", [])
-        out: List[Tuple[str, Dict[str, Any], float]] = []
-        for m in matches:
-            out.append((m.get("id", ""), m.get("metadata", {}), float(m.get("score", 0.0))))
-        return out
+        return [
+            (m.get("id", ""), m.get("metadata", {}), float(m.get("score", 0.0)))
+            for m in matches
+        ]
 
     @staticmethod
     def build_user_prompt(question: str, contexts: List[Dict[str, Any]]) -> str:
+        """Format the user-facing prompt that stitches the question with retrieved context."""
         parts = ["Question: " + question, "\nContext:"]
         for idx, ctx in enumerate(contexts, 1):
             chunk = ctx.get("text", "")
@@ -92,6 +99,7 @@ class RAGService:
         return "\n".join(parts)
 
     def _chat(self, model: str, system: str, user: str) -> str:
+        """Send the system/user messages to the chat endpoint and return the model reply."""
         url = self.env.model_base_url.rstrip("/") + "/chat/completions"
         headers = {"Authorization": f"Bearer {self.env.models_api_key}", "Content-Type": "application/json"}
         payload = {
@@ -109,6 +117,15 @@ class RAGService:
         return data["choices"][0]["message"]["content"]
 
     def answer(self, question: str) -> Dict[str, Any]:
+        """Run embed → retrieve → prompt → chat to answer a user question.
+
+        Args:
+            question: Natural-language question to answer using TED content.
+
+        Returns:
+            A response payload containing the model answer, context metadata, and the
+            augmented prompt used for generation.
+        """
         cfg = get_config()
         query_vec = self._embed(question, cfg.embedding_model)
         matches = self._retrieve(query_vec)

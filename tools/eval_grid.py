@@ -1,12 +1,7 @@
-"""Grid search evaluation for different top_k values.
-
-Runs eval_runner.py for each top_k value and saves results.
-Note: This only affects local evaluation. For deployed API, update Vercel env vars.
-"""
+"""Grid search evaluation for different top_k values."""
 
 import argparse
 import json
-import os
 import subprocess
 import sys
 from pathlib import Path
@@ -17,7 +12,17 @@ from config import get_config
 
 
 def run_eval(base_url: str, top_k: int, output_dir: Path, timeout: int = 60) -> dict:
-    """Run evaluation with specified top_k value."""
+    """Run eval_runner for a given top_k and persist results.
+
+    Args:
+        base_url: Deployed API base URL.
+        top_k: Retrieval depth to test.
+        output_dir: Directory to store the resulting JSON.
+        timeout: Request timeout in seconds.
+
+    Returns:
+        A dictionary describing the outcome, including result data or an error marker.
+    """
     # Create subdirectory for this parameter combination
     param_dir = output_dir / f"k{top_k}"
     param_dir.mkdir(exist_ok=True, parents=True)
@@ -52,7 +57,7 @@ def run_eval(base_url: str, top_k: int, output_dir: Path, timeout: int = 60) -> 
 
 
 def summarize_comparison(all_results: list) -> None:
-    """Print comparison table across different k values."""
+    """Print a compact comparison table across tested k values."""
     print("\n" + "="*80)
     print("COMPARISON SUMMARY")
     print("="*80 + "\n")
@@ -80,6 +85,7 @@ def summarize_comparison(all_results: list) -> None:
 
 
 def main() -> None:
+    """CLI entry point to sweep top_k values and summarize results."""
     parser = argparse.ArgumentParser(description="Grid search evaluation for top_k")
     parser.add_argument("--base-url", type=str, required=True, help="Base URL of deployed API")
     parser.add_argument("--k-values", type=int, nargs="+", default=[5, 7, 10, 15], 

@@ -1,10 +1,9 @@
-"""Score and rank eval results across parameter sweeps.
+"""Score and rank evaluation results across hyperparameter sweeps.
 
 Usage:
-  ./.venv/bin/python tools/score_runs.py
+    python tools/score_runs.py
 
-Looks for any grid_summary.json under eval_results/** and prints a summary
-per top_k inside each parameter directory.
+Scans eval_results/**/grid_summary.json and prints metrics per configuration.
 """
 
 from __future__ import annotations
@@ -15,7 +14,14 @@ from typing import Dict, Any, List
 
 
 def score_run(run: List[Dict[str, Any]]) -> Dict[str, Any]:
-    """Compute metrics for a single run (one k value)."""
+    """Compute pass/fail and aggregate metrics for a single top_k run.
+
+    Args:
+        run: Parsed eval results for a specific k setting.
+
+    Returns:
+        Aggregate metrics including passes, token counts, and average score.
+    """
     passed = 0
     total_chars = 0
     total_distinct = 0
@@ -44,6 +50,7 @@ def score_run(run: List[Dict[str, Any]]) -> Dict[str, Any]:
 
 
 def main() -> None:
+    """Walk eval_results and print scored metrics for each grid search run."""
     root = pathlib.Path("eval_results")
     summaries = list(root.rglob("grid_summary.json"))
     if not summaries:
@@ -61,7 +68,7 @@ def main() -> None:
             metrics = score_run(run["results"])
             print(
                 f"k={run['top_k']}: "
-                f"passed={metrics['passed']} "
+                f"passed={metrics['passed']}/4 "
                 f"chars={metrics['total_chars']} "
                 f"distinct={metrics['total_distinct']} "
                 f"mean_score={metrics['mean_avg_score']:.4f}"

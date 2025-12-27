@@ -1,6 +1,7 @@
 .venv/
 .venv_pdf/
 .env
+ingest_progress.txt
 __pycache__/
 *.pyc
 .DS_Store

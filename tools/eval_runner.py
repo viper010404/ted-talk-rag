@@ -1,16 +1,4 @@
-"""Evaluation runner for TED Talk RAG.
-
-Sends the 4 assignment queries to a deployed API, collects metrics, and
-prints a concise summary to help choose hyperparameters.
-
-Usage:
-  ./.venv/bin/python eval_runner.py --base-url https://your-app.vercel.app
-
-Optional flags:
-  --base-url    Base URL of the deployed app (default: http://localhost:8000)
-  --namespace   Pinecone namespace hint (passed for display only)
-  --timeout     Request timeout in seconds (default: 60)
-"""
+"""Evaluate the deployed RAG API on 4 assignment-aligned queries."""
 
 from __future__ import annotations
 
@@ -44,6 +32,7 @@ EVAL_QUERIES: List[Dict[str, str]] = [
 
 
 def post_prompt(base_url: str, question: str, timeout: int, top_k: int | None = None) -> Dict[str, Any]:
+    """Send a prompt request to the deployed API and return the parsed response."""
     url = base_url.rstrip("/") + "/api/prompt"
     payload = {"question": question}
     if top_k is not None:
@@ -59,6 +48,15 @@ def post_prompt(base_url: str, question: str, timeout: int, top_k: int | None = 
 
 
 def summarize_result(name: str, result: Dict[str, Any]) -> Dict[str, Any]:
+    """Convert a raw API response into compliance metrics for a single query.
+
+    Args:
+        name: Identifier for the evaluated query.
+        result: JSON payload returned by the prompt endpoint.
+
+    Returns:
+        A normalized record with compliance flags, score aggregates, and context preview.
+    """
     if "error" in result:
         return {"name": name, "ok": False, "error": result["error"], "raw": result}
 
@@ -101,15 +99,15 @@ def summarize_result(name: str, result: Dict[str, Any]) -> Dict[str, Any]:
 
 
 def main() -> None:
+    """CLI to run the evaluation suite against a base URL and print summaries."""
     parser = argparse.ArgumentParser(description="Evaluate TED Talk RAG via HTTP")
     parser.add_argument("--base-url", type=str, default="http://localhost:8000")
-    parser.add_argument("--namespace", type=str, default="default")
     parser.add_argument("--timeout", type=int, default=60)
     parser.add_argument("--top-k", type=int, default=None, help="Override top_k for retrieval")
     parser.add_argument("--output", type=str, default=None, help="Save JSON summary to this file")
     args = parser.parse_args()
 
-    print(f"Evaluating against {args.base_url} (namespace={args.namespace})\n")
+    print(f"Evaluating against {args.base_url}\n")
 
     summaries: List[Dict[str, Any]] = []
     top_k = getattr(args, 'top_k', None)

@@ -1,4 +1,4 @@
-"""Ingest the TED dataset: chunk transcripts, embed, and upsert to Pinecone."""
+"""Ingest TED talks: chunk, embed, and upsert to Pinecone with checkpointing."""
 
 import argparse
 import json
@@ -11,11 +11,7 @@ import pandas as pd
 import requests
 import tiktoken
 from pinecone import Pinecone
-try:  # optional progress bar
-    from tqdm import tqdm
-except Exception:  # pragma: no cover - soft fallback
-    def tqdm(iterable, **kwargs):
-        return iterable
+from tqdm import tqdm
 
 from config import get_config
 
@@ -55,6 +51,7 @@ def append_progress(path: Path, talk_id: str) -> None:
 
 
 def chunk_text(text: str, chunk_size: int, overlap_ratio: float) -> List[str]:
+    """Tokenize text and return overlapping chunks sized for embeddings."""
     text = (text or "").strip()
     if not text:
         return []
@@ -76,6 +73,7 @@ def chunk_text(text: str, chunk_size: int, overlap_ratio: float) -> List[str]:
 
 
 def batched(seq: Sequence, size: int) -> Iterable[Sequence]:
+    """Yield a sequence in fixed-size batches."""
     for i in range(0, len(seq), size):
         yield seq[i : i + size]
 
@@ -83,6 +81,7 @@ def batched(seq: Sequence, size: int) -> Iterable[Sequence]:
 def embed_texts(
     texts: Sequence[str], model: str, api_key: str, base_url: str, timeout: int = 60
 ) -> List[List[float]]:
+    """Request embeddings for a list of texts from the configured model API."""
     if not texts:
         return []
     url = base_url.rstrip("/") + "/embeddings"
@@ -99,50 +98,11 @@ def embed_texts(
 
 
 def load_dataset(path: Path) -> pd.DataFrame:
+    """Load the TED talks CSV into a DataFrame."""
     if not path.exists():
         raise FileNotFoundError(f"Dataset not found at {path}")
     return pd.read_csv(path)
 
-
-def build_chunks(
-    df: pd.DataFrame, chunk_size: int, overlap_ratio: float, limit: int | None
-) -> List[Tuple[str, dict]]:
-    required_cols = {"talk_id", "title", "transcript"}
-    if not required_cols.issubset(df.columns):
-        missing = required_cols - set(df.columns)
-        raise ValueError(f"Dataset missing required columns: {sorted(missing)}")
-
-    records: List[Tuple[str, dict]] = []
-    rows = df if limit is None else df.head(limit)
-    for _, row in tqdm(rows.iterrows(), total=len(rows), desc="Talks"):
-        talk_id = str(row["talk_id"])
-        title = str(row["title"])
-        speaker = str(row.get("speaker_1") or "")
-        topics = str(row.get("topics") or "")
-        description = str(row.get("description") or "")
-        recorded_date = str(row.get("recorded_date") or "")
-        native_lang = str(row.get("native_lang") or "")
-        url = str(row.get("url") or "")
-        transcript = row.get("transcript")
-        if not isinstance(transcript, str) or not transcript.strip():
-            continue
-        chunks = chunk_text(transcript, chunk_size, overlap_ratio)
-        for idx, chunk in enumerate(chunks):
-            vector_id = f"{talk_id}-{idx}"
-            metadata = {
-                "talk_id": talk_id,
-                "title": title,
-                "speaker": speaker,
-                "topics": topics,
-                "description": description,
-                "recorded_date": recorded_date,
-                "native_lang": native_lang,
-                "url": url,
-                "chunk_id": idx,
-                "text": chunk,
-            }
-            records.append((vector_id, metadata))
-    return records
 
 
 def upsert_vectors(
@@ -152,18 +112,25 @@ def upsert_vectors(
     namespace: str,
     batch_size: int,
 ) -> None:
+    """Upsert vector batches into Pinecone."""
     index = pc.Index(host=host)
     for batch in batched(vectors, batch_size):
         index.upsert(vectors=batch, namespace=namespace)
 
 
 def main() -> None:
+    """CLI entry point to chunk, embed, and ingest TED talks with checkpointing.
+
+    Parses command-line options, batches embeddings and upserts to Pinecone, and
+    persists a progress file so reruns skip already ingested talks.
+    """
     load_dotenv()
     cfg = get_config()
     parser = argparse.ArgumentParser(description="Ingest TED talks into Pinecone")
     parser.add_argument("--dataset", type=Path, default=Path("data/ted_talks_en.csv"))
     parser.add_argument("--limit", type=int, default=5, help="Limit number of talks (default: 5)")
     parser.add_argument("--batch-size", type=int, default=32, help="Embedding/upsert batch size")
+    parser.add_argument("--checkpoint-every", type=int, default=10, help="Upsert and checkpoint every N talks")
     parser.add_argument("--namespace", type=str, default="default")
     parser.add_argument("--dry-run", action="store_true", help="Chunk only, no embeddings")
     parser.add_argument(
@@ -176,7 +143,6 @@ def main() -> None:
 
     pinecone_key = require_env("PINECONE_API_KEY")
     pinecone_host = require_env("PINECONE_HOST")
-    pinecone_index = os.getenv("PINECONE_INDEX", "ted-talks")
     llm_api_key = os.getenv("MODELS_API_KEY")
     model_base_url = os.getenv("MODEL_BASE_URL")
     if not llm_api_key and not args.dry_run:
@@ -196,10 +162,12 @@ def main() -> None:
     rows = df if args.limit is None else df.head(args.limit)
     total_chunks = 0
     ingested_talks = 0
+    pending_records: List[Tuple[str, dict]] = []
+    pending_talk_ids: List[str] = []
 
     pc = Pinecone(api_key=pinecone_key) if not args.dry_run else None
 
-    for _, row in rows.iterrows():
+    for _, row in tqdm(rows.iterrows(), total=len(rows), desc="Talks"):
         talk_id = str(row["talk_id"])
         if talk_id in processed:
             continue
@@ -220,7 +188,6 @@ def main() -> None:
             continue
 
         # Build records for this talk
-        records: List[Tuple[str, dict]] = []
         for idx, chunk in enumerate(chunks):
             vector_id = f"{talk_id}-{idx}"
             metadata = {
@@ -235,16 +202,33 @@ def main() -> None:
                 "chunk_id": idx,
                 "text": chunk,
             }
-            records.append((vector_id, metadata))
+            pending_records.append((vector_id, metadata))
 
-        total_chunks += len(records)
+        pending_talk_ids.append(talk_id)
+        total_chunks += len(chunks)
 
-        if args.dry_run:
-            continue
+        # Checkpoint: embed and upsert every N talks
+        if not args.dry_run and len(pending_talk_ids) >= args.checkpoint_every:
+            vectors: List[Tuple[str, List[float], dict]] = []
+            for batch in batched(pending_records, args.batch_size):
+                texts = [meta["text"] for _, meta in batch]
+                embeds = embed_texts(texts, cfg.embedding_model, llm_api_key, model_base_url)
+                if any(len(vec) != cfg.embed_dim for vec in embeds):
+                    raise RuntimeError("Received embedding with unexpected dimension")
+                for (vector_id, meta), vec in zip(batch, embeds):
+                    vectors.append((vector_id, vec, meta))
 
-        # Embed and upsert for this talk
+            upsert_vectors(pc, pinecone_host, vectors, args.namespace, args.batch_size)
+            for tid in pending_talk_ids:
+                append_progress(args.progress_file, tid)
+            ingested_talks += len(pending_talk_ids)
+            pending_records.clear()
+            pending_talk_ids.clear()
+
+    # Final flush for remaining talks
+    if not args.dry_run and pending_records:
         vectors: List[Tuple[str, List[float], dict]] = []
-        for batch in batched(records, args.batch_size):
+        for batch in batched(pending_records, args.batch_size):
             texts = [meta["text"] for _, meta in batch]
             embeds = embed_texts(texts, cfg.embedding_model, llm_api_key, model_base_url)
             if any(len(vec) != cfg.embed_dim for vec in embeds):
@@ -253,8 +237,9 @@ def main() -> None:
                 vectors.append((vector_id, vec, meta))
 
         upsert_vectors(pc, pinecone_host, vectors, args.namespace, args.batch_size)
-        append_progress(args.progress_file, talk_id)
-        ingested_talks += 1
+        for tid in pending_talk_ids:
+            append_progress(args.progress_file, tid)
+        ingested_talks += len(pending_talk_ids)
 
     if args.dry_run:
         print(f"Dry run complete; prepared {total_chunks} chunks across {len(rows)} talks.")
