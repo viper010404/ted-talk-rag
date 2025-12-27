@@ -1,0 +1,134 @@
+[
+  {
+    "name": "precise_fact",
+    "ok": true,
+    "response": "I don't know based on the provided TED data.\n\nFrom the provided transcripts, the talk \"8 secrets of success\" (talk_id=70) explicitly discusses pushing through fear and self-doubt: the speaker says, \"You've got to push through shyness and self-doubt. Goldie Hawn says, 'I always had self-doubts. I wasn't good enough; I wasn't smart enough. I didn't think I'd make it.'\" That passage shows this talk addresses overcoming fear/anxiety, but the speaker's name is not included in the provided TED data.",
+    "context_count": 10,
+    "compliance": {
+      "distinct_talks": 7,
+      "avg_score": 0.3133,
+      "prompt_chars": 44448,
+      "contains_title_in_response": true,
+      "is_concise": true
+    },
+    "context_preview": [
+      {
+        "talk_id": "70",
+        "title": "8 secrets of success",
+        "score": 0.414617538,
+        "chunk_preview": "This is really a two-hour presentation I give to high school students, cut down to three minutes. And it all started one day on a plane, on ..."
+      },
+      {
+        "talk_id": "66",
+        "title": "Do schools kill creativity?",
+        "score": 0.330732346,
+        "chunk_preview": " learning disorder.\" She couldn't concentrate; she was fidgeting. I think now they'd say she had ADHD. Wouldn't you? But this was the 1930s,..."
+      },
+      {
+        "talk_id": "47",
+        "title": "Chemical scum that dream of distant quasars",
+        "score": 0.329467773,
+        "chunk_preview": " back. But I have to tell you \u2014 and sorry, Richard \u2014 but I never did like biology field trips much \u2014 (Laughter) and I think we can just abou..."
+      }
+    ]
+  },
+  {
+    "name": "multi_list_3",
+    "ok": true,
+    "response": "Answers (with supporting excerpts from the provided TED transcripts):\n\n1) The birth of the open-source learning revolution\n- Support: the speaker explicitly frames the talk around textbooks and educational materials, saying he wants to \u201creinvent the way we think about writing books, using them and teaching from them,\u201d and invites listeners to \u201cchange the landscape of education and educational publishing.\u201d (talk_id=25)\n\n2) Do schools kill creativity?\n- Support: the speaker states \u201cI have a big interest in education\u201d and argues \u201ccreativity now is as important in education as literacy,\u201d critiquing how current schooling \u201cis educating people out of their creative capacities.\u201d (talk_id=66)\n\n3) One Laptop per Child\n- Support: the talk centers on education as a solution to big problems and on putting laptops into students\u2019 hands to enable new forms of learning (e.g., reported effects: \u201cdrop of truancy\u2026 increase in student participation\u201d and \u201ckids are engaged \u2014 they have laptops!\u201d). (talk_id=41)",
+    "context_count": 10,
+    "compliance": {
+      "distinct_talks": 5,
+      "avg_score": 0.3656,
+      "prompt_chars": 42991,
+      "contains_title_in_response": true,
+      "is_concise": true
+    },
+    "context_preview": [
+      {
+        "talk_id": "25",
+        "title": "The birth of the open-source learning revolution",
+        "score": 0.426948547,
+        "chunk_preview": " make it free for people who do this whole idea of re-sampling, ripping, mixing, burning and sharing. OK, I'd like to conclude with just the..."
+      },
+      {
+        "talk_id": "70",
+        "title": "8 secrets of success",
+        "score": 0.420352936,
+        "chunk_preview": "This is really a two-hour presentation I give to high school students, cut down to three minutes. And it all started one day on a plane, on ..."
+      },
+      {
+        "talk_id": "25",
+        "title": "The birth of the open-source learning revolution",
+        "score": 0.384918213,
+        "chunk_preview": "I'm Rich Baraniuk and what I'd like to talk a little bit about today are some ideas that I think have just tremendous resonance with all the..."
+      }
+    ]
+  },
+  {
+    "name": "key_idea_summary",
+    "ok": true,
+    "response": "Title: My wish: Three actions for Africa\n\nSummary: In this talk Bono proposes using digital technology to transform lives in Ethiopia by connecting \u201cevery hospital, health clinic and school\u201d to the Internet. He says this would let \u201cnurses get better training, pharmacists be able to order supplies, [and] doctors share their expertise,\u201d and calls the Internet\u2019s power to \u201crewrite the rules and transform lives\u201d a way to overcome disease and poverty (transcript).",
+    "context_count": 10,
+    "compliance": {
+      "distinct_talks": 7,
+      "avg_score": 0.4231,
+      "prompt_chars": 41987,
+      "contains_title_in_response": true,
+      "is_concise": true
+    },
+    "context_preview": [
+      {
+        "talk_id": "19",
+        "title": "How technology evolves",
+        "score": 0.488765717,
+        "chunk_preview": " in there, there was no room for any difference at all. That's the definition. There was no temperature. There was no difference whatsoever...."
+      },
+      {
+        "talk_id": "70",
+        "title": "8 secrets of success",
+        "score": 0.451156616,
+        "chunk_preview": "This is really a two-hour presentation I give to high school students, cut down to three minutes. And it all started one day on a plane, on ..."
+      },
+      {
+        "talk_id": "19",
+        "title": "How technology evolves",
+        "score": 0.448223114,
+        "chunk_preview": " is his chart, which is not quite published yet. But the most interesting aspect about this is that if you look at those red lines at the bo..."
+      }
+    ]
+  },
+  {
+    "name": "recommendation",
+    "ok": true,
+    "response": "I recommend talk_id=1, \"Averting the climate crisis.\" The transcript explicitly addresses \u201cWhat can you do?\u201d at the individual level and lists many concrete daily-life actions: \u201cReduce emissions in your home. \u2026 Insulation, better design. Buy green electricity where you can. I mentioned automobiles \u2014 buy a hybrid. Use light rail.\u201d It also suggests lifestyle and business steps \u2014 \u201cBe a green consumer\u2026 Make a decision to live a carbon-neutral life\u2026 purchase or acquire offsets for the remainder\u2026 Consider making your business carbon\u2011neutral\u201d \u2014 and points to a practical tool (a carbon calculator at climatecrisis.net) to measure and reduce your personal CO2. These passages show the talk gives specific, actionable advice for individuals.\n\nIf you also want a complementary, community- and justice-focused perspective, talk_id=53, \"Greening the ghetto,\" urges individuals to use their influence locally (\u201cUse your influence in support of comprehensive, sustainable change\u2026 Make sustainability sexy. Make it a part of your dinner and cocktail conversations.\u201d) \u2014 but for hands-on daily-life measures, \"Averting the climate crisis\" is the stronger match based on the provided transcript.",
+    "context_count": 10,
+    "compliance": {
+      "distinct_talks": 7,
+      "avg_score": 0.4394,
+      "prompt_chars": 44886,
+      "contains_title_in_response": true,
+      "is_concise": true
+    },
+    "context_preview": [
+      {
+        "talk_id": "1",
+        "title": "Averting the climate crisis",
+        "score": 0.50775528,
+        "chunk_preview": "Thank you so much, Chris. And it's truly a great honor to have the opportunity to come to this stage twice; I'm extremely grateful. I have b..."
+      },
+      {
+        "talk_id": "53",
+        "title": "Greening the ghetto",
+        "score": 0.490488082,
+        "chunk_preview": " the bottom line is: their people-first agenda was not meant to penalize those who could actually afford cars, but rather, to provide opport..."
+      },
+      {
+        "talk_id": "1",
+        "title": "Averting the climate crisis",
+        "score": 0.481247902,
+        "chunk_preview": " you know? Every time the tide comes in and out, you find some more shells. Just in the last two days, we got the new temperature records in..."
+      }
+    ]
+  }
+]

@@ -98,7 +98,12 @@ def build_chunks(
     for _, row in rows.iterrows():
         talk_id = str(row["talk_id"])
         title = str(row["title"])
-        url = row.get("url") or ""
+        speaker = str(row.get("speaker_1") or "")
+        topics = str(row.get("topics") or "")
+        description = str(row.get("description") or "")
+        recorded_date = str(row.get("recorded_date") or "")
+        native_lang = str(row.get("native_lang") or "")
+        url = str(row.get("url") or "")
         transcript = row.get("transcript")
         if not isinstance(transcript, str) or not transcript.strip():
             continue
@@ -108,6 +113,11 @@ def build_chunks(
             metadata = {
                 "talk_id": talk_id,
                 "title": title,
+                "speaker": speaker,
+                "topics": topics,
+                "description": description,
+                "recorded_date": recorded_date,
+                "native_lang": native_lang,
                 "url": url,
                 "chunk_id": idx,
                 "text": chunk,
