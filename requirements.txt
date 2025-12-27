@@ -1,0 +1,4 @@
+pandas
+pinecone-client
+requests
+tiktoken
