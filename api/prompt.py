@@ -36,6 +36,11 @@ class handler(BaseHTTPRequestHandler):
         try:
             load_dotenv()
             cfg = get_config()
+            # Allow optional top_k override from request
+            top_k = data.get("top_k", cfg.top_k)
+            if not isinstance(top_k, int) or top_k < 1 or top_k > 30:
+                top_k = cfg.top_k
+            
             env = RAGEnv(
                 models_api_key=require_env("MODELS_API_KEY"),
                 model_base_url=require_env("MODEL_BASE_URL"),
@@ -43,7 +48,7 @@ class handler(BaseHTTPRequestHandler):
                 pinecone_host=require_env("PINECONE_HOST"),
                 namespace=os.getenv("PINECONE_NAMESPACE", "default"),
             )
-            service = RAGService(env=env, top_k=cfg.top_k)
+            service = RAGService(env=env, top_k=top_k)
             result = service.answer(question)
             
             self.send_response(200)

@@ -16,10 +16,6 @@ def run_eval(base_url: str, top_k: int, output_dir: Path, timeout: int = 60) -> 
     """Run evaluation with specified top_k value."""
     output_file = output_dir / f"eval_k{top_k}.json"
     
-    # Set environment variable for this run
-    env = os.environ.copy()
-    env["TOP_K"] = str(top_k)
-    
     print(f"\n{'='*80}")
     print(f"Evaluating with TOP_K={top_k}")
     print(f"{'='*80}\n")
@@ -29,10 +25,11 @@ def run_eval(base_url: str, top_k: int, output_dir: Path, timeout: int = 60) -> 
         "eval_runner.py",
         "--base-url", base_url,
         "--timeout", str(timeout),
+        "--top-k", str(top_k),
         "--output", str(output_file),
     ]
     
-    result = subprocess.run(cmd, env=env, capture_output=False)
+    result = subprocess.run(cmd, capture_output=False)
     
     if result.returncode != 0:
         print(f"Warning: eval_runner.py returned exit code {result.returncode}")

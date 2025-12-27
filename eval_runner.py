@@ -43,9 +43,12 @@ EVAL_QUERIES: List[Dict[str, str]] = [
 ]
 
 
-def post_prompt(base_url: str, question: str, timeout: int) -> Dict[str, Any]:
+def post_prompt(base_url: str, question: str, timeout: int, top_k: int | None = None) -> Dict[str, Any]:
     url = base_url.rstrip("/") + "/api/prompt"
-    resp = requests.post(url, json={"question": question}, timeout=timeout)
+    payload = {"question": question}
+    if top_k is not None:
+        payload["top_k"] = top_k
+    resp = requests.post(url, json=payload, timeout=timeout)
     try:
         data = resp.json()
     except Exception:
@@ -102,15 +105,17 @@ def main() -> None:
     parser.add_argument("--base-url", type=str, default="http://localhost:8000")
     parser.add_argument("--namespace", type=str, default="default")
     parser.add_argument("--timeout", type=int, default=60)
+    parser.add_argument("--top-k", type=int, default=None, help="Override top_k for retrieval")
     parser.add_argument("--output", type=str, default=None, help="Save JSON summary to this file")
     args = parser.parse_args()
 
     print(f"Evaluating against {args.base_url} (namespace={args.namespace})\n")
 
     summaries: List[Dict[str, Any]] = []
+    top_k = getattr(args, 'top_k', None)
     for q in EVAL_QUERIES:
         print(f"Query: {q['name']}")
-        res = post_prompt(args.base_url, q["question"], timeout=args.timeout)
+        res = post_prompt(args.base_url, q["question"], timeout=args.timeout, top_k=top_k)
         summary = summarize_result(q["name"], res)
         summaries.append(summary)
         if not summary.get("ok"):
