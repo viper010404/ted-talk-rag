@@ -1,0 +1,134 @@
+[
+  {
+    "name": "precise_fact",
+    "ok": true,
+    "response": "I don't know based on the provided TED data.\n\nExplanation: The transcript shows the talk titled \"8 secrets of success\" discusses overcoming self-doubt and pushing past shyness\u2014for example: \"You've got to push through shyness and self-doubt\" and \"I always had self-doubts. I wasn't good enough; I wasn't smart enough.\" (talk_id=70). However, the provided context does not include the speaker's name for that talk, so I cannot give the speaker based solely on the supplied TED data.",
+    "context_count": 10,
+    "compliance": {
+      "distinct_talks": 7,
+      "avg_score": 0.3499,
+      "prompt_chars": 21560,
+      "contains_title_in_response": true,
+      "is_concise": true
+    },
+    "context_preview": [
+      {
+        "talk_id": "70",
+        "title": "8 secrets of success",
+        "score": 0.426326752,
+        "chunk_preview": " says, \"I always had self-doubts. I wasn't good enough; I wasn't smart enough. I didn't think I'd make it.\" Now it's not always easy to push..."
+      },
+      {
+        "talk_id": "70",
+        "title": "8 secrets of success",
+        "score": 0.399848968,
+        "chunk_preview": "This is really a two-hour presentation I give to high school students, cut down to three minutes. And it all started one day on a plane, on ..."
+      },
+      {
+        "talk_id": "87",
+        "title": "Nerdcore comedy",
+        "score": 0.349184036,
+        "chunk_preview": "Laughter) Within a week, I received a call from Earthlink that said, due to a 10 cents per megabyte overage charge, I owed them 30,000 dolla..."
+      }
+    ]
+  },
+  {
+    "name": "multi_list_3",
+    "ok": true,
+    "response": "One Laptop per Child\nDo schools kill creativity?\nThe birth of the open-source learning revolution",
+    "context_count": 10,
+    "compliance": {
+      "distinct_talks": 5,
+      "avg_score": 0.4052,
+      "prompt_chars": 23001,
+      "contains_title_in_response": true,
+      "is_concise": true
+    },
+    "context_preview": [
+      {
+        "talk_id": "41",
+        "title": "One Laptop per Child",
+        "score": 0.455001861,
+        "chunk_preview": "I've been at MIT for 44 years. I went to TED I. There's only one other person here, I think, who did that. All the other TEDs \u2014 and I went t..."
+      },
+      {
+        "talk_id": "66",
+        "title": "Do schools kill creativity?",
+        "score": 0.438369781,
+        "chunk_preview": "Good morning. How are you? (Audience) Good. It's been great, hasn't it? I've been blown away by the whole thing. In fact, I'm leaving. (Laug..."
+      },
+      {
+        "talk_id": "25",
+        "title": "The birth of the open-source learning revolution",
+        "score": 0.412261963,
+        "chunk_preview": " of books, be they teachers, students or just general readers. And this is even more true if you happen to speak a language other than one o..."
+      }
+    ]
+  },
+  {
+    "name": "key_idea_summary",
+    "ok": true,
+    "response": "Title: How technology evolves\n\nShort summary: In this talk the speaker argues that technology expands \"choices, possibilities, freedoms\" and is a force that helps humanity \"realize their true difference.\" As the transcript puts it, technology \"brings us choices, possibilities, freedoms\" and we even have \"a moral obligation to invent technology so that every person on the globe has the potential to realize their true difference.\" The core idea is that technology improves people's lives by creating new opportunities for self\u2011expression and by accelerating the ways we can solve problems and evolve.",
+    "context_count": 10,
+    "compliance": {
+      "distinct_talks": 5,
+      "avg_score": 0.4531,
+      "prompt_chars": 23441,
+      "contains_title_in_response": true,
+      "is_concise": true
+    },
+    "context_preview": [
+      {
+        "talk_id": "19",
+        "title": "How technology evolves",
+        "score": 0.480394363,
+        "chunk_preview": "I don't know about you, but I haven't quite figured out exactly what technology means in my life. I've spent the past year thinking about wh..."
+      },
+      {
+        "talk_id": "19",
+        "title": "How technology evolves",
+        "score": 0.478185683,
+        "chunk_preview": " is accelerating evolution. It's accelerating the way in which we search for ideas. So if you have life hacking \u2014 life means hacking, the ga..."
+      },
+      {
+        "talk_id": "19",
+        "title": "How technology evolves",
+        "score": 0.476957321,
+        "chunk_preview": " potential to realize their true difference. We want a trillion zillion species of one individuals. That's what technology really wants. I'm..."
+      }
+    ]
+  },
+  {
+    "name": "recommendation",
+    "ok": true,
+    "response": "I recommend \"Averting the climate crisis\" \u2014 Al Gore. \n\nJustification from the transcript: Gore explicitly frames the talk around \"What can you do about the climate crisis?\" and lists concrete daily-life actions you can take: \"Reduce emissions in your home. ... Insulation, better design. Buy green electricity where you can.\" He names transport choices: \"Buy a hybrid. Use light rail.\" He urges consumer choices: \"Be a green consumer. You have choices with everything you buy,\" and proposes personal carbon management: \"Make a decision to live a carbon-neutral life... There is a carbon calculator\" at climatecrisis.net to \"very precisely calculate what your CO2 emissions are, and then you will be given options to reduce.\" These passages show the talk focuses on practical steps individuals can take in everyday life.",
+    "context_count": 10,
+    "compliance": {
+      "distinct_talks": 4,
+      "avg_score": 0.4649,
+      "prompt_chars": 25131,
+      "contains_title_in_response": true,
+      "is_concise": true
+    },
+    "context_preview": [
+      {
+        "talk_id": "1",
+        "title": "Averting the climate crisis",
+        "score": 0.526288092,
+        "chunk_preview": ", long, handwritten letter from my friend and partner and colleague Bill Clinton, saying, \"Congratulations on the new restaurant, Al!\" (Laug..."
+      },
+      {
+        "talk_id": "1",
+        "title": "Averting the climate crisis",
+        "score": 0.502883911,
+        "chunk_preview": " it should be \u2014 but there is more global warming pollution that comes from buildings than from cars and trucks. Cars and trucks are very sig..."
+      },
+      {
+        "talk_id": "53",
+        "title": "Greening the ghetto",
+        "score": 0.489829063,
+        "chunk_preview": " a huge portion of the city's resources was dedicated to serving them. If you're a mayor, you can do something about that. His administratio..."
+      }
+    ]
+  }
+]

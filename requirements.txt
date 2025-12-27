@@ -2,3 +2,4 @@ pandas
 pinecone
 requests
 tiktoken
+tqdm

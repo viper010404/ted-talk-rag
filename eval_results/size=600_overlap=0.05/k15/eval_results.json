@@ -1,0 +1,134 @@
+[
+  {
+    "name": "precise_fact",
+    "ok": true,
+    "response": "I don't know based on the provided TED data.\n\nExplanation: The transcripts include talks that discuss fear/anxiety (for example, \"8 secrets of success\" says \"You've got to push through shyness and self-doubt,\" and \"The surprising science of happiness\" notes \"When our fears are unbounded and overblown, we're reckless, and we're cowardly\"). However, the provided TED excerpts list talk titles but do not include speaker names, so I cannot provide the speaker for a matching talk from the given data.",
+    "context_count": 15,
+    "compliance": {
+      "distinct_talks": 12,
+      "avg_score": 0.306,
+      "prompt_chars": 75238,
+      "contains_title_in_response": true,
+      "is_concise": true
+    },
+    "context_preview": [
+      {
+        "talk_id": "70",
+        "title": "8 secrets of success",
+        "score": 0.414617538,
+        "chunk_preview": "This is really a two-hour presentation I give to high school students, cut down to three minutes. And it all started one day on a plane, on ..."
+      },
+      {
+        "talk_id": "58",
+        "title": "My wish: Help me stop pandemics",
+        "score": 0.342306137,
+        "chunk_preview": " you will take a look at it. Aravind, which started as a Seva project, is now the world's largest and best eye hospital. This year, that one..."
+      },
+      {
+        "talk_id": "47",
+        "title": "Chemical scum that dream of distant quasars",
+        "score": 0.33864975,
+        "chunk_preview": " written a book about our vulnerability to all sorts of things, from astrophysics, to scientific experiments gone wrong, and most importantl..."
+      }
+    ]
+  },
+  {
+    "name": "multi_list_3",
+    "ok": true,
+    "response": "The birth of the open-source learning revolution\nDo schools kill creativity?\nOne Laptop per Child",
+    "context_count": 15,
+    "compliance": {
+      "distinct_talks": 9,
+      "avg_score": 0.3535,
+      "prompt_chars": 69305,
+      "contains_title_in_response": true,
+      "is_concise": true
+    },
+    "context_preview": [
+      {
+        "talk_id": "70",
+        "title": "8 secrets of success",
+        "score": 0.420352936,
+        "chunk_preview": "This is really a two-hour presentation I give to high school students, cut down to three minutes. And it all started one day on a plane, on ..."
+      },
+      {
+        "talk_id": "25",
+        "title": "The birth of the open-source learning revolution",
+        "score": 0.394044876,
+        "chunk_preview": " indicating how fields relate to each other. And I'll just give you my personal story. We came up with this six-and-a-half years ago because..."
+      },
+      {
+        "talk_id": "25",
+        "title": "The birth of the open-source learning revolution",
+        "score": 0.384973556,
+        "chunk_preview": "I'm Rich Baraniuk and what I'd like to talk a little bit about today are some ideas that I think have just tremendous resonance with all the..."
+      }
+    ]
+  },
+  {
+    "name": "key_idea_summary",
+    "ok": true,
+    "response": "Title: The accelerating power of technology\n\nSummary: The speaker argues that technological progress is exponential and can dramatically improve people's lives by enabling new medical, energy and information capabilities. For example, \"These nano-bots ... will first be used for medical and health applications: cleaning up the environment, providing powerful fuel cells,\" and later \"we have the potential to overcome disease and poverty.\" The talk emphasizes that as computing, brain-scanning and nanotech advance, they will expand human health, intelligence and access to resources \u2014 if we choose to apply them to the right problems. These points are drawn from the retrieved transcript.",
+    "context_count": 15,
+    "compliance": {
+      "distinct_talks": 12,
+      "avg_score": 0.4124,
+      "prompt_chars": 71322,
+      "contains_title_in_response": true,
+      "is_concise": true
+    },
+    "context_preview": [
+      {
+        "talk_id": "19",
+        "title": "How technology evolves",
+        "score": 0.481491119,
+        "chunk_preview": " back and have it help us monitor life. Maybe in some ways the fact that what we're trying to do with technology is find a good home for it...."
+      },
+      {
+        "talk_id": "19",
+        "title": "How technology evolves",
+        "score": 0.468910217,
+        "chunk_preview": " buying steam valves. I mean, it was just \u2014 it was really there. And so, I began to think about, well, maybe that's just a random sample. Ma..."
+      },
+      {
+        "talk_id": "70",
+        "title": "8 secrets of success",
+        "score": 0.451156616,
+        "chunk_preview": "This is really a two-hour presentation I give to high school students, cut down to three minutes. And it all started one day on a plane, on ..."
+      }
+    ]
+  },
+  {
+    "name": "recommendation",
+    "ok": true,
+    "response": "I recommend: \"Averting the climate crisis\" \u2014 Al Gore.\n\nJustification from the provided TED transcript:\n- The talk explicitly asks \"What can you do?\" and lists concrete daily actions: \"Reduce emissions in your home. ... Insulation, better design. Buy green electricity where you can. I mentioned automobiles \u2014 buy a hybrid. Use light rail.\" (transcript).\n- It gives a clear personal plan: \"Make a decision to live a carbon-neutral life... It means reduce your carbon dioxide emissions with the full range of choices that you make, and then purchase or acquire offsets for the remainder... there is a carbon calculator\" (climatecrisis.net).\n- It also covers steps beyond individual habits that people can take in daily life/business: \"Consider making your business carbon-neutral... Invest sustainably\" and urges civic action: \"Become politically active. ... Support the idea of capping carbon dioxide emissions \u2014 global warming pollution \u2014 and trading it.\"\n\nThese passages show the talk directly addresses everyday choices individuals can make (home, transport, consumption, offsets, investing and political engagement), so it fits your request.",
+    "context_count": 15,
+    "compliance": {
+      "distinct_talks": 10,
+      "avg_score": 0.4134,
+      "prompt_chars": 75080,
+      "contains_title_in_response": true,
+      "is_concise": true
+    },
+    "context_preview": [
+      {
+        "talk_id": "1",
+        "title": "Averting the climate crisis",
+        "score": 0.508911133,
+        "chunk_preview": " with the U.S. contribution to global warming, under business as usual. Efficiency in end-use electricity and end-use of all energy is the l..."
+      },
+      {
+        "talk_id": "1",
+        "title": "Averting the climate crisis",
+        "score": 0.507791519,
+        "chunk_preview": "Thank you so much, Chris. And it's truly a great honor to have the opportunity to come to this stage twice; I'm extremely grateful. I have b..."
+      },
+      {
+        "talk_id": "47",
+        "title": "Chemical scum that dream of distant quasars",
+        "score": 0.485650063,
+        "chunk_preview": " written a book about our vulnerability to all sorts of things, from astrophysics, to scientific experiments gone wrong, and most importantl..."
+      }
+    ]
+  }
+]

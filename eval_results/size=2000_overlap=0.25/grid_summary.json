@@ -1,0 +1,554 @@
+[
+  {
+    "top_k": 5,
+    "results": [
+      {
+        "name": "precise_fact",
+        "ok": true,
+        "response": "I don't know based on the provided TED data.\n\nExplanation: The provided transcript excerpt for talk_id=97, \"The surprising science of happiness,\" clearly discusses fear/anxiety \u2014 e.g., \"When our fears are bounded, we're prudent, we're cautious, we're thoughtful. When our fears are unbounded and overblown, we're reckless, and we're cowardly.\" However, the supplied metadata/transcript excerpts do not include the speaker's name for that talk, so I cannot provide the speaker based only on the given TED data.",
+        "context_count": 5,
+        "compliance": {
+          "distinct_talks": 5,
+          "avg_score": 0.3533,
+          "prompt_chars": 17790,
+          "contains_title_in_response": true,
+          "is_concise": true
+        },
+        "context_preview": [
+          {
+            "talk_id": "70",
+            "title": "8 secrets of success",
+            "score": 0.414617538,
+            "chunk_preview": "This is really a two-hour presentation I give to high school students, cut down to three minutes. And it all started one day on a plane, on ..."
+          },
+          {
+            "talk_id": "87",
+            "title": "Nerdcore comedy",
+            "score": 0.359020233,
+            "chunk_preview": "You know, when Chris first approached me to speak at TED, I said no, because I felt like I wasn't going to be able to make that personal con..."
+          },
+          {
+            "talk_id": "66",
+            "title": "Do schools kill creativity?",
+            "score": 0.330640793,
+            "chunk_preview": " she comes in, I get annoyed. I say, \"Terry, please, I'm trying to fry an egg in here.\" (Laughter) \"Give me a break.\" (Laughter) Actually, d..."
+          }
+        ]
+      },
+      {
+        "name": "multi_list_3",
+        "ok": true,
+        "response": "The birth of the open-source learning revolution\nDo schools kill creativity?\n8 secrets of success",
+        "context_count": 5,
+        "compliance": {
+          "distinct_talks": 4,
+          "avg_score": 0.391,
+          "prompt_chars": 27589,
+          "contains_title_in_response": true,
+          "is_concise": true
+        },
+        "context_preview": [
+          {
+            "talk_id": "70",
+            "title": "8 secrets of success",
+            "score": 0.420352936,
+            "chunk_preview": "This is really a two-hour presentation I give to high school students, cut down to three minutes. And it all started one day on a plane, on ..."
+          },
+          {
+            "talk_id": "25",
+            "title": "The birth of the open-source learning revolution",
+            "score": 0.407762527,
+            "chunk_preview": " can't let this happen. We can't let this Napster thing happen here. So, what we have to do is get it right from the very beginning. And wha..."
+          },
+          {
+            "talk_id": "66",
+            "title": "Do schools kill creativity?",
+            "score": 0.395763397,
+            "chunk_preview": "Good morning. How are you? (Audience) Good. It's been great, hasn't it? I've been blown away by the whole thing. In fact, I'm leaving. (Laug..."
+          }
+        ]
+      },
+      {
+        "name": "key_idea_summary",
+        "ok": true,
+        "response": "Title: The accelerating power of technology\n\nSummary of key idea (based on the provided transcript): The speaker argues that technological progress is exponential and will greatly improve people\u2019s lives by delivering medical and health applications (for example, \u201cThese nano-bots \u2026 will first be used for medical and health applications\u201d), expanding human intelligence through a direct merger with technology (\u201cit'll be a tremendous expansion of human intelligence through this direct merger with our technology\u201d), and raising life expectancy via biotechnology and nanotechnology (\u201cHuman life expectancy is expanding \u2026 with this sort of biotechnology, nano-technology revolutions, this will move up very rapidly\u201d). The overall message: accelerating tech can empower major improvements in health, cognition and everyday capabilities.",
+        "context_count": 5,
+        "compliance": {
+          "distinct_talks": 3,
+          "avg_score": 0.4502,
+          "prompt_chars": 28842,
+          "contains_title_in_response": true,
+          "is_concise": true
+        },
+        "context_preview": [
+          {
+            "talk_id": "38",
+            "title": "The accelerating power of technology",
+            "score": 0.456731826,
+            "chunk_preview": " These nano-bots I mentioned will first be used for medical and health applications: cleaning up the environment, providing powerful fuel ce..."
+          },
+          {
+            "talk_id": "70",
+            "title": "8 secrets of success",
+            "score": 0.451156616,
+            "chunk_preview": "This is really a two-hour presentation I give to high school students, cut down to three minutes. And it all started one day on a plane, on ..."
+          },
+          {
+            "talk_id": "38",
+            "title": "The accelerating power of technology",
+            "score": 0.435167313,
+            "chunk_preview": " of most people at this conference, like myself, to live much longer, because we were using up the precious resources which were better depl..."
+          }
+        ]
+      },
+      {
+        "name": "recommendation",
+        "ok": true,
+        "response": "I recommend \"Averting the climate crisis\" by Al Gore. The retrieved transcript explicitly addresses what individuals can do in daily life \u2014 for example: \"Now, what can you do? Reduce emissions in your home. ... Insulation, better design. Buy green electricity where you can. I mentioned automobiles \u2014 buy a hybrid. Use light rail.\" He also urges: \"Consider this: Make a decision to live a carbon-neutral life\" and points listeners to practical tools: \"There is a carbon calculator\" at climatecrisis.net. These passages show the talk gives concrete, everyday actions and resources you can use.",
+        "context_count": 5,
+        "compliance": {
+          "distinct_talks": 3,
+          "avg_score": 0.4778,
+          "prompt_chars": 36534,
+          "contains_title_in_response": true,
+          "is_concise": true
+        },
+        "context_preview": [
+          {
+            "talk_id": "1",
+            "title": "Averting the climate crisis",
+            "score": 0.492823631,
+            "chunk_preview": " continue to use fossil fuels in a way that is safe. Not quite there yet. OK. Now, what can you do? Reduce emissions in your home. Most of t..."
+          },
+          {
+            "talk_id": "53",
+            "title": "Greening the ghetto",
+            "score": 0.468988419,
+            "chunk_preview": " \u2014 have shown that you can actually do that. I do have a problem with developments that hyper-exploit politically vulnerable communities for..."
+          },
+          {
+            "talk_id": "47",
+            "title": "Chemical scum that dream of distant quasars",
+            "score": 0.459191382,
+            "chunk_preview": " \u2014 our environment, in the form of us \u2014 acquire this special relationship with the rest of the universe? Well, one thing that's true about S..."
+          }
+        ]
+      }
+    ],
+    "output_file": "eval_results/size=2000_overlap=0.25/k5/eval_results.json"
+  },
+  {
+    "top_k": 7,
+    "results": [
+      {
+        "name": "precise_fact",
+        "ok": true,
+        "response": "I don't know based on the provided TED data.\n\nThe provided transcript does show a talk that addresses overcoming fear/anxiety: the talk titled \"8 secrets of success\" includes the line, \"You've got to push through shyness and self-doubt,\" and quotes Goldie Hawn: \"I always had self-doubts. I wasn't good enough; I wasn't smart enough. I didn't think I'd make it.\" However, the speaker name for that talk is not given in the supplied TED excerpts, so I cannot provide the speaker based on the provided data.",
+        "context_count": 7,
+        "compliance": {
+          "distinct_talks": 6,
+          "avg_score": 0.3413,
+          "prompt_chars": 35251,
+          "contains_title_in_response": true,
+          "is_concise": true
+        },
+        "context_preview": [
+          {
+            "talk_id": "70",
+            "title": "8 secrets of success",
+            "score": 0.414617538,
+            "chunk_preview": "This is really a two-hour presentation I give to high school students, cut down to three minutes. And it all started one day on a plane, on ..."
+          },
+          {
+            "talk_id": "87",
+            "title": "Nerdcore comedy",
+            "score": 0.359020233,
+            "chunk_preview": "You know, when Chris first approached me to speak at TED, I said no, because I felt like I wasn't going to be able to make that personal con..."
+          },
+          {
+            "talk_id": "47",
+            "title": "Chemical scum that dream of distant quasars",
+            "score": 0.325382262,
+            "chunk_preview": " of the disaster itself, then there's not going to be much argument, really. But no precautions and no precautionary principle can avoid pro..."
+          }
+        ]
+      },
+      {
+        "name": "multi_list_3",
+        "ok": true,
+        "response": "The birth of the open-source learning revolution\nDo schools kill creativity?\n8 secrets of success",
+        "context_count": 7,
+        "compliance": {
+          "distinct_talks": 5,
+          "avg_score": 0.3742,
+          "prompt_chars": 43458,
+          "contains_title_in_response": true,
+          "is_concise": true
+        },
+        "context_preview": [
+          {
+            "talk_id": "70",
+            "title": "8 secrets of success",
+            "score": 0.420352936,
+            "chunk_preview": "This is really a two-hour presentation I give to high school students, cut down to three minutes. And it all started one day on a plane, on ..."
+          },
+          {
+            "talk_id": "25",
+            "title": "The birth of the open-source learning revolution",
+            "score": 0.407762527,
+            "chunk_preview": " can't let this happen. We can't let this Napster thing happen here. So, what we have to do is get it right from the very beginning. And wha..."
+          },
+          {
+            "talk_id": "66",
+            "title": "Do schools kill creativity?",
+            "score": 0.395763397,
+            "chunk_preview": "Good morning. How are you? (Audience) Good. It's been great, hasn't it? I've been blown away by the whole thing. In fact, I'm leaving. (Laug..."
+          }
+        ]
+      },
+      {
+        "name": "key_idea_summary",
+        "ok": true,
+        "response": "Title: The accelerating power of technology (speaker in the retrieved transcript)\n\nSummary of key idea: The speaker argues that exponential advances in information, biotechnology and nanotechnology will materially improve people's lives \u2014 first through medical and environmental uses (for example, \"These nano-bots ... will first be used for medical and health applications: cleaning up the environment\" and devices that \"go inside our brain, interact with our biological neurons\"), expanding human intelligence and life expectancy. The core message: \"progress in technology is exponential, not linear,\" so powerful, near-term technologies can be applied to the right problems to improve health, cognition and access to goods.",
+        "context_count": 7,
+        "compliance": {
+          "distinct_talks": 4,
+          "avg_score": 0.442,
+          "prompt_chars": 44518,
+          "contains_title_in_response": true,
+          "is_concise": true
+        },
+        "context_preview": [
+          {
+            "talk_id": "19",
+            "title": "How technology evolves",
+            "score": 0.478982925,
+            "chunk_preview": " culture is doing and add it to what the long-term trajectory \u2014 again, in life's evolution \u2014 we find that each case \u2014 each of the major tran..."
+          },
+          {
+            "talk_id": "38",
+            "title": "The accelerating power of technology",
+            "score": 0.456731826,
+            "chunk_preview": " These nano-bots I mentioned will first be used for medical and health applications: cleaning up the environment, providing powerful fuel ce..."
+          },
+          {
+            "talk_id": "70",
+            "title": "8 secrets of success",
+            "score": 0.451156616,
+            "chunk_preview": "This is really a two-hour presentation I give to high school students, cut down to three minutes. And it all started one day on a plane, on ..."
+          }
+        ]
+      },
+      {
+        "name": "recommendation",
+        "ok": true,
+        "response": "I recommend Al Gore \u2014 \"Averting the climate crisis.\"\n\nJustification from the provided TED transcript:\n- Gore explicitly frames the talk around individual action: \"I want to focus on what many of you have said you would like me to elaborate on: What can you do about the climate crisis?\" (talk_id=1).\n- He gives concrete daily-life and business actions: \"Reduce emissions in your home. ... Insulation, better design. Buy green electricity where you can. ... Buy a hybrid. Use light rail. ... Be a green consumer.\" (talk_id=1).\n- He recommends committing to a carbon-neutral life and points listeners to a practical tool: \"Consider this: Make a decision to live a carbon-neutral life... It means reduce your carbon dioxide emissions ... and then purchase or acquire offsets ... elaborated at climatecrisis.net. There is a carbon calculator.\" (talk_id=1).\n- He also covers broader, actionable steps individuals can take: \"consider making your business carbon-neutral,\" \"integrate climate solutions into all of your innovations,\" \"Invest sustainably,\" and \"Become politically active. ... Support the idea of capping carbon dioxide emissions \u2014 global warming pollution \u2014 and trading it.\" (talk_id=2).\n\nThese excerpts show the talk directly addresses climate change and offers specific, practical actions people can take in their daily lives and workplaces.",
+        "context_count": 7,
+        "compliance": {
+          "distinct_talks": 4,
+          "avg_score": 0.4599,
+          "prompt_chars": 42744,
+          "contains_title_in_response": true,
+          "is_concise": false
+        },
+        "context_preview": [
+          {
+            "talk_id": "1",
+            "title": "Averting the climate crisis",
+            "score": 0.527393341,
+            "chunk_preview": "Thank you so much, Chris. And it's truly a great honor to have the opportunity to come to this stage twice; I'm extremely grateful. I have b..."
+          },
+          {
+            "talk_id": "1",
+            "title": "Averting the climate crisis",
+            "score": 0.492823631,
+            "chunk_preview": " continue to use fossil fuels in a way that is safe. Not quite there yet. OK. Now, what can you do? Reduce emissions in your home. Most of t..."
+          },
+          {
+            "talk_id": "53",
+            "title": "Greening the ghetto",
+            "score": 0.468988419,
+            "chunk_preview": " \u2014 have shown that you can actually do that. I do have a problem with developments that hyper-exploit politically vulnerable communities for..."
+          }
+        ]
+      }
+    ],
+    "output_file": "eval_results/size=2000_overlap=0.25/k7/eval_results.json"
+  },
+  {
+    "top_k": 10,
+    "results": [
+      {
+        "name": "precise_fact",
+        "ok": true,
+        "response": "I don't know based on the provided TED data.\n\nThe provided transcript that discusses overcoming fear/anxiety is from talk_id=70, title \"8 secrets of success.\" The talk explicitly says, \"You've got to push through shyness and self-doubt. Goldie Hawn says, 'I always had self-doubts. I wasn't good enough; I wasn't smart enough. I didn't think I'd make it.'\" This shows the talk addresses overcoming fear/anxiety. The speaker's name is not given in the provided TED data, so I cannot provide the speaker.",
+        "context_count": 10,
+        "compliance": {
+          "distinct_talks": 7,
+          "avg_score": 0.3308,
+          "prompt_chars": 55989,
+          "contains_title_in_response": true,
+          "is_concise": true
+        },
+        "context_preview": [
+          {
+            "talk_id": "70",
+            "title": "8 secrets of success",
+            "score": 0.414617538,
+            "chunk_preview": "This is really a two-hour presentation I give to high school students, cut down to three minutes. And it all started one day on a plane, on ..."
+          },
+          {
+            "talk_id": "87",
+            "title": "Nerdcore comedy",
+            "score": 0.359020233,
+            "chunk_preview": "You know, when Chris first approached me to speak at TED, I said no, because I felt like I wasn't going to be able to make that personal con..."
+          },
+          {
+            "talk_id": "97",
+            "title": "The surprising science of happiness",
+            "score": 0.336648971,
+            "chunk_preview": ". But when those preferences drive us too hard and too fast because we have overrated the difference between these futures, we are at risk. ..."
+          }
+        ]
+      },
+      {
+        "name": "multi_list_3",
+        "ok": true,
+        "response": "The birth of the open-source learning revolution\nDo schools kill creativity?\n8 secrets of success",
+        "context_count": 10,
+        "compliance": {
+          "distinct_talks": 6,
+          "avg_score": 0.3601,
+          "prompt_chars": 65538,
+          "contains_title_in_response": true,
+          "is_concise": true
+        },
+        "context_preview": [
+          {
+            "talk_id": "70",
+            "title": "8 secrets of success",
+            "score": 0.420272827,
+            "chunk_preview": "This is really a two-hour presentation I give to high school students, cut down to three minutes. And it all started one day on a plane, on ..."
+          },
+          {
+            "talk_id": "25",
+            "title": "The birth of the open-source learning revolution",
+            "score": 0.407617569,
+            "chunk_preview": " can't let this happen. We can't let this Napster thing happen here. So, what we have to do is get it right from the very beginning. And wha..."
+          },
+          {
+            "talk_id": "66",
+            "title": "Do schools kill creativity?",
+            "score": 0.395626068,
+            "chunk_preview": "Good morning. How are you? (Audience) Good. It's been great, hasn't it? I've been blown away by the whole thing. In fact, I'm leaving. (Laug..."
+          }
+        ]
+      },
+      {
+        "name": "key_idea_summary",
+        "ok": true,
+        "response": "Title: \"The accelerating power of technology\"\n\nSummary: The speaker argues that rapidly advancing technologies \u2014 especially nano-technology and biotech \u2014 can directly improve people's lives by enabling new medical and health applications (for example, \u201cThese nano\u2011bots ... will first be used for medical and health applications: cleaning up the environment, providing powerful fuel cells...\u201d). He says such tools can go inside the body and brain to diagnose and treat disease, expand human intelligence and increase life expectancy, and that \u201cprogress in technology is exponential,\u201d so these benefits can arrive quickly. (Quotes/paraphrase from the talk: \u201cThese nano\u2011bots I mentioned will first be used for medical and health applications...\u201d and \u201cBut most importantly, it'll be a tremendous expansion of human intelligence... Human life expectancy is expanding.\u201d)",
+        "context_count": 10,
+        "compliance": {
+          "distinct_talks": 7,
+          "avg_score": 0.4283,
+          "prompt_chars": 59042,
+          "contains_title_in_response": true,
+          "is_concise": true
+        },
+        "context_preview": [
+          {
+            "talk_id": "19",
+            "title": "How technology evolves",
+            "score": 0.478982925,
+            "chunk_preview": " culture is doing and add it to what the long-term trajectory \u2014 again, in life's evolution \u2014 we find that each case \u2014 each of the major tran..."
+          },
+          {
+            "talk_id": "38",
+            "title": "The accelerating power of technology",
+            "score": 0.456731826,
+            "chunk_preview": " These nano-bots I mentioned will first be used for medical and health applications: cleaning up the environment, providing powerful fuel ce..."
+          },
+          {
+            "talk_id": "70",
+            "title": "8 secrets of success",
+            "score": 0.451156616,
+            "chunk_preview": "This is really a two-hour presentation I give to high school students, cut down to three minutes. And it all started one day on a plane, on ..."
+          }
+        ]
+      },
+      {
+        "name": "recommendation",
+        "ok": true,
+        "response": "Recommend: \"Averting the climate crisis\" \u2014 Al Gore.\n\nJustification from the retrieved TED text:\n- The speaker explicitly frames the segment as practical: \"I want to focus on what many of you have said you would like me to elaborate on: What can you do about the climate crisis?\" (transcript [1]).\n- The talk lists concrete, everyday actions you can take: \"Reduce emissions in your home. ... Insulation, better design. Buy green electricity where you can. ... buy a hybrid. Use light rail.\" (transcript [1]/[2]).\n- It also gives personal- and business-level steps and tools: \"Be a green consumer. ... Make a decision to live a carbon-neutral life... climatecrisis.net. There is a carbon calculator... you can very precisely calculate what your CO2 emissions are, and then you will be given options to reduce.\" (transcript [1]/[2]).\n- It adds civic and investment actions with direct guidance: \"Consider making your business carbon-neutral... Invest sustainably... Become politically active. ... Support the idea of capping carbon dioxide emissions \u2014 global warming pollution \u2014 and trading it.\" (transcript [2]).\n\nBecause it combines clear, practical daily-life steps, tools (carbon calculator), and broader actions (business, political engagement), this talk best matches your request based on the provided TED content.",
+        "context_count": 10,
+        "compliance": {
+          "distinct_talks": 7,
+          "avg_score": 0.4316,
+          "prompt_chars": 56806,
+          "contains_title_in_response": true,
+          "is_concise": false
+        },
+        "context_preview": [
+          {
+            "talk_id": "1",
+            "title": "Averting the climate crisis",
+            "score": 0.527393341,
+            "chunk_preview": "Thank you so much, Chris. And it's truly a great honor to have the opportunity to come to this stage twice; I'm extremely grateful. I have b..."
+          },
+          {
+            "talk_id": "1",
+            "title": "Averting the climate crisis",
+            "score": 0.492823631,
+            "chunk_preview": " continue to use fossil fuels in a way that is safe. Not quite there yet. OK. Now, what can you do? Reduce emissions in your home. Most of t..."
+          },
+          {
+            "talk_id": "53",
+            "title": "Greening the ghetto",
+            "score": 0.468988419,
+            "chunk_preview": " \u2014 have shown that you can actually do that. I do have a problem with developments that hyper-exploit politically vulnerable communities for..."
+          }
+        ]
+      }
+    ],
+    "output_file": "eval_results/size=2000_overlap=0.25/k10/eval_results.json"
+  },
+  {
+    "top_k": 15,
+    "results": [
+      {
+        "name": "precise_fact",
+        "ok": true,
+        "response": "I don't know based on the provided TED data.\n\nExplanation: The transcript for talk_id=97, \"The surprising science of happiness,\" explicitly discusses fear and how it can be overblown: \"When our fears are bounded, we're prudent... When our fears are unbounded and overblown, we're reckless, and we're cowardly.\" This talk therefore addresses fear/anxiety. However, the provided TED metadata and transcript excerpts do not include the speaker's name, so I cannot give the speaker from the supplied data.",
+        "context_count": 15,
+        "compliance": {
+          "distinct_talks": 9,
+          "avg_score": 0.3092,
+          "prompt_chars": 92371,
+          "contains_title_in_response": true,
+          "is_concise": true
+        },
+        "context_preview": [
+          {
+            "talk_id": "70",
+            "title": "8 secrets of success",
+            "score": 0.414617538,
+            "chunk_preview": "This is really a two-hour presentation I give to high school students, cut down to three minutes. And it all started one day on a plane, on ..."
+          },
+          {
+            "talk_id": "87",
+            "title": "Nerdcore comedy",
+            "score": 0.359020233,
+            "chunk_preview": "You know, when Chris first approached me to speak at TED, I said no, because I felt like I wasn't going to be able to make that personal con..."
+          },
+          {
+            "talk_id": "97",
+            "title": "The surprising science of happiness",
+            "score": 0.336648971,
+            "chunk_preview": ". But when those preferences drive us too hard and too fast because we have overrated the difference between these futures, we are at risk. ..."
+          }
+        ]
+      },
+      {
+        "name": "multi_list_3",
+        "ok": true,
+        "response": "The birth of the open-source learning revolution\nDo schools kill creativity?\nOne Laptop per Child",
+        "context_count": 15,
+        "compliance": {
+          "distinct_talks": 8,
+          "avg_score": 0.3415,
+          "prompt_chars": 101763,
+          "contains_title_in_response": true,
+          "is_concise": true
+        },
+        "context_preview": [
+          {
+            "talk_id": "70",
+            "title": "8 secrets of success",
+            "score": 0.420352936,
+            "chunk_preview": "This is really a two-hour presentation I give to high school students, cut down to three minutes. And it all started one day on a plane, on ..."
+          },
+          {
+            "talk_id": "25",
+            "title": "The birth of the open-source learning revolution",
+            "score": 0.407762527,
+            "chunk_preview": " can't let this happen. We can't let this Napster thing happen here. So, what we have to do is get it right from the very beginning. And wha..."
+          },
+          {
+            "talk_id": "66",
+            "title": "Do schools kill creativity?",
+            "score": 0.395763397,
+            "chunk_preview": "Good morning. How are you? (Audience) Good. It's been great, hasn't it? I've been blown away by the whole thing. In fact, I'm leaving. (Laug..."
+          }
+        ]
+      },
+      {
+        "name": "key_idea_summary",
+        "ok": true,
+        "response": "Title: The accelerating power of technology\n\nSummary: In this talk the speaker argues that exponential technological progress will directly improve people\u2019s lives \u2014 for example, \u201cThese nano-bots I mentioned will first be used for medical and health applications: cleaning up the environment, providing powerful fuel cells \u2026\u201d and even \u201cgo inside our brain, interact with our biological neurons\u201d to expand experience and intelligence. He highlights medical benefits (curing disease, extending life expectancy) and stresses that \u201cprogress in technology is exponential, not linear,\u201d so these life-improving applications will arrive rapidly. All points above are drawn from the retrieved transcript excerpts.",
+        "context_count": 15,
+        "compliance": {
+          "distinct_talks": 9,
+          "avg_score": 0.413,
+          "prompt_chars": 99052,
+          "contains_title_in_response": true,
+          "is_concise": true
+        },
+        "context_preview": [
+          {
+            "talk_id": "19",
+            "title": "How technology evolves",
+            "score": 0.478982925,
+            "chunk_preview": " culture is doing and add it to what the long-term trajectory \u2014 again, in life's evolution \u2014 we find that each case \u2014 each of the major tran..."
+          },
+          {
+            "talk_id": "38",
+            "title": "The accelerating power of technology",
+            "score": 0.456731826,
+            "chunk_preview": " These nano-bots I mentioned will first be used for medical and health applications: cleaning up the environment, providing powerful fuel ce..."
+          },
+          {
+            "talk_id": "70",
+            "title": "8 secrets of success",
+            "score": 0.451156616,
+            "chunk_preview": "This is really a two-hour presentation I give to high school students, cut down to three minutes. And it all started one day on a plane, on ..."
+          }
+        ]
+      },
+      {
+        "name": "recommendation",
+        "ok": true,
+        "response": "I recommend \"Averting the climate crisis\" by Al Gore (talk_id=1).\n\nJustification from the provided TED transcript:\n- The speaker explicitly asks \"What can you do?\" and gives concrete, everyday actions: \"Reduce emissions in your home... Insulation, better design. Buy green electricity where you can\" and for transport: \"buy a hybrid. Use light rail\" (context [1], [2]).\n- He frames consumer choices and lifestyle changes: \"Be a green consumer. You have choices with everything you buy\" and proposes aiming to \"live a carbon-neutral life\" with tools: \"There is a carbon calculator... you can very precisely calculate what your CO2 emissions are, and then you will be given options to reduce\" (context [1], [2]).\n- He also covers broader individual roles you can take: \"Consider making your business carbon-neutral... Invest sustainably... Become a catalyst of change. Teach others, learn about it, talk about it... Become politically active. Support the idea of capping carbon dioxide emissions\" (context [2]).\n\nThese passages show the talk directly addresses climate change and lists practical daily-life and civic actions individuals can take.",
+        "context_count": 15,
+        "compliance": {
+          "distinct_talks": 12,
+          "avg_score": 0.405,
+          "prompt_chars": 97121,
+          "contains_title_in_response": true,
+          "is_concise": true
+        },
+        "context_preview": [
+          {
+            "talk_id": "1",
+            "title": "Averting the climate crisis",
+            "score": 0.527393341,
+            "chunk_preview": "Thank you so much, Chris. And it's truly a great honor to have the opportunity to come to this stage twice; I'm extremely grateful. I have b..."
+          },
+          {
+            "talk_id": "1",
+            "title": "Averting the climate crisis",
+            "score": 0.492823631,
+            "chunk_preview": " continue to use fossil fuels in a way that is safe. Not quite there yet. OK. Now, what can you do? Reduce emissions in your home. Most of t..."
+          },
+          {
+            "talk_id": "53",
+            "title": "Greening the ghetto",
+            "score": 0.468988419,
+            "chunk_preview": " \u2014 have shown that you can actually do that. I do have a problem with developments that hyper-exploit politically vulnerable communities for..."
+          }
+        ]
+      }
+    ],
+    "output_file": "eval_results/size=2000_overlap=0.25/k15/eval_results.json"
+  }
+]

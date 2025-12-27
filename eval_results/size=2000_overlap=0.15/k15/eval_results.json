@@ -1,0 +1,134 @@
+[
+  {
+    "name": "precise_fact",
+    "ok": true,
+    "response": "I don't know based on the provided TED data.\n\nExplanation: the provided transcripts include a talk titled \"The surprising science of happiness\" (talk_id=97) that explicitly discusses fear \u2014 for example: \"When our fears are bounded, we're prudent, we're cautious... When our fears are unbounded and overblown, we're reckless, and we're cowardly.\" This shows the talk addresses how fears can be overblown. However, the supplied context does not include the speaker name for that talk (the metadata entries show titles but the transcripts here do not state the speaker), so I cannot provide the speaker based solely on the provided TED data.",
+    "context_count": 15,
+    "compliance": {
+      "distinct_talks": 12,
+      "avg_score": 0.3003,
+      "prompt_chars": 96853,
+      "contains_title_in_response": true,
+      "is_concise": true
+    },
+    "context_preview": [
+      {
+        "talk_id": "70",
+        "title": "8 secrets of success",
+        "score": 0.414627075,
+        "chunk_preview": "This is really a two-hour presentation I give to high school students, cut down to three minutes. And it all started one day on a plane, on ..."
+      },
+      {
+        "talk_id": "87",
+        "title": "Nerdcore comedy",
+        "score": 0.358596802,
+        "chunk_preview": "You know, when Chris first approached me to speak at TED, I said no, because I felt like I wasn't going to be able to make that personal con..."
+      },
+      {
+        "talk_id": "58",
+        "title": "My wish: Help me stop pandemics",
+        "score": 0.338348389,
+        "chunk_preview": "000 best friends and I went door to door, with that same picture, to every single house in India. We made over one billion house calls. And ..."
+      }
+    ]
+  },
+  {
+    "name": "multi_list_3",
+    "ok": true,
+    "response": "The birth of the open-source learning revolution\nDo schools kill creativity?\nOne Laptop per Child",
+    "context_count": 15,
+    "compliance": {
+      "distinct_talks": 10,
+      "avg_score": 0.3489,
+      "prompt_chars": 98241,
+      "contains_title_in_response": true,
+      "is_concise": true
+    },
+    "context_preview": [
+      {
+        "talk_id": "25",
+        "title": "The birth of the open-source learning revolution",
+        "score": 0.428854018,
+        "chunk_preview": " a similar number of hits. But how do we protect this? How do we protect it into the future? And the first thing that people are probably th..."
+      },
+      {
+        "talk_id": "70",
+        "title": "8 secrets of success",
+        "score": 0.420412064,
+        "chunk_preview": "This is really a two-hour presentation I give to high school students, cut down to three minutes. And it all started one day on a plane, on ..."
+      },
+      {
+        "talk_id": "66",
+        "title": "Do schools kill creativity?",
+        "score": 0.39571,
+        "chunk_preview": "Good morning. How are you? (Audience) Good. It's been great, hasn't it? I've been blown away by the whole thing. In fact, I'm leaving. (Laug..."
+      }
+    ]
+  },
+  {
+    "name": "key_idea_summary",
+    "ok": true,
+    "response": "Title: How technology evolves\n\nSummary: The speaker argues that technology expands \"room to make differences\" and thus improves people's lives by giving them \"choices, possibilities, freedoms.\" He illustrates how inventions (the piano for Mozart, cheap oil paints for Van Gogh) enable new forms of self\u2011expression and says \"we have a moral obligation to invent technology so that every person on the globe has the potential to realize their true difference.\" (Paraphrased from the talk transcript.)",
+    "context_count": 15,
+    "compliance": {
+      "distinct_talks": 11,
+      "avg_score": 0.41,
+      "prompt_chars": 95462,
+      "contains_title_in_response": true,
+      "is_concise": true
+    },
+    "context_preview": [
+      {
+        "talk_id": "19",
+        "title": "How technology evolves",
+        "score": 0.486883193,
+        "chunk_preview": " things that technology brings us. That's what technology is bringing us: choices, possibilities, freedoms. That's what it's about. It's thi..."
+      },
+      {
+        "talk_id": "19",
+        "title": "How technology evolves",
+        "score": 0.452859879,
+        "chunk_preview": " see there's a general hammer, and hammers become more and more specific over time. There's obviously diversity. Huge numbers of things. Thi..."
+      },
+      {
+        "talk_id": "70",
+        "title": "8 secrets of success",
+        "score": 0.451339722,
+        "chunk_preview": "This is really a two-hour presentation I give to high school students, cut down to three minutes. And it all started one day on a plane, on ..."
+      }
+    ]
+  },
+  {
+    "name": "recommendation",
+    "ok": true,
+    "response": "I recommend: \"Averting the climate crisis\" \u2014 Al Gore.\n\nJustification from the provided TED transcript:\n- Al Gore explicitly asks \"What can you do about the climate crisis?\" and then lists practical, everyday actions: \"Reduce emissions in your home. ... Insulation, better design. Buy green electricity where you can.\"  \n- He names personal transport choices: \"Buy a hybrid. Use light rail. Figure out some of the other options that are much better.\"  \n- He stresses consumer and lifestyle choices: \"Be a green consumer. You have choices with everything you buy\u2026\" and suggests, \"Make a decision to live a carbon-neutral life,\" noting tools to help: \"There is a carbon calculator... elaborated at climatecrisis.net.\"  \n- He also covers broader, actionable steps individuals can take: \"Consider making your business carbon-neutral... Invest sustainably... Become a catalyst of change. Teach others, learn about it, talk about it,\" and civic engagement: \"Become politically active... Support the idea of capping carbon dioxide emissions \u2014 global warming pollution \u2014 and trading it.\"\n\nThese passages show the talk focuses both on specific daily actions (home, transport, purchases) and on tools/resources (carbon calculator) and civic steps \u2014 making it the most directly relevant TED talk in the provided data for someone wanting practical, everyday things to do about climate change.",
+    "context_count": 15,
+    "compliance": {
+      "distinct_talks": 10,
+      "avg_score": 0.4037,
+      "prompt_chars": 91138,
+      "contains_title_in_response": true,
+      "is_concise": false
+    },
+    "context_preview": [
+      {
+        "talk_id": "1",
+        "title": "Averting the climate crisis",
+        "score": 0.527393341,
+        "chunk_preview": "Thank you so much, Chris. And it's truly a great honor to have the opportunity to come to this stage twice; I'm extremely grateful. I have b..."
+      },
+      {
+        "talk_id": "53",
+        "title": "Greening the ghetto",
+        "score": 0.509994507,
+        "chunk_preview": " with the gift of influence. That's why you're here and why you value the information we exchange. Use your influence in support of comprehe..."
+      },
+      {
+        "talk_id": "1",
+        "title": "Averting the climate crisis",
+        "score": 0.502023697,
+        "chunk_preview": " of choices that you make, and then purchase or acquire offsets for the remainder that you have not completely reduced. And what it means is..."
+      }
+    ]
+  }
+]

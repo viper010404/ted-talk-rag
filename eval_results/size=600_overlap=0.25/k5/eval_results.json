@@ -1,0 +1,134 @@
+[
+  {
+    "name": "precise_fact",
+    "ok": true,
+    "response": "I don't know based on the provided TED data.",
+    "context_count": 5,
+    "compliance": {
+      "distinct_talks": 4,
+      "avg_score": 0.3725,
+      "prompt_chars": 11221,
+      "contains_title_in_response": false,
+      "is_concise": true
+    },
+    "context_preview": [
+      {
+        "talk_id": "70",
+        "title": "8 secrets of success",
+        "score": 0.426326752,
+        "chunk_preview": " says, \"I always had self-doubts. I wasn't good enough; I wasn't smart enough. I didn't think I'd make it.\" Now it's not always easy to push..."
+      },
+      {
+        "talk_id": "70",
+        "title": "8 secrets of success",
+        "score": 0.399848968,
+        "chunk_preview": "This is really a two-hour presentation I give to high school students, cut down to three minutes. And it all started one day on a plane, on ..."
+      },
+      {
+        "talk_id": "87",
+        "title": "Nerdcore comedy",
+        "score": 0.349184036,
+        "chunk_preview": "Laughter) Within a week, I received a call from Earthlink that said, due to a 10 cents per megabyte overage charge, I owed them 30,000 dolla..."
+      }
+    ]
+  },
+  {
+    "name": "multi_list_3",
+    "ok": true,
+    "response": "One Laptop per Child\nDo schools kill creativity?\nThe birth of the open-source learning revolution",
+    "context_count": 5,
+    "compliance": {
+      "distinct_talks": 3,
+      "avg_score": 0.4227,
+      "prompt_chars": 11528,
+      "contains_title_in_response": true,
+      "is_concise": true
+    },
+    "context_preview": [
+      {
+        "talk_id": "41",
+        "title": "One Laptop per Child",
+        "score": 0.455001861,
+        "chunk_preview": "I've been at MIT for 44 years. I went to TED I. There's only one other person here, I think, who did that. All the other TEDs \u2014 and I went t..."
+      },
+      {
+        "talk_id": "66",
+        "title": "Do schools kill creativity?",
+        "score": 0.438369781,
+        "chunk_preview": "Good morning. How are you? (Audience) Good. It's been great, hasn't it? I've been blown away by the whole thing. In fact, I'm leaving. (Laug..."
+      },
+      {
+        "talk_id": "25",
+        "title": "The birth of the open-source learning revolution",
+        "score": 0.412261963,
+        "chunk_preview": " of books, be they teachers, students or just general readers. And this is even more true if you happen to speak a language other than one o..."
+      }
+    ]
+  },
+  {
+    "name": "key_idea_summary",
+    "ok": true,
+    "response": "Title: How technology evolves\n\nKey idea (short summary): The speaker argues that technology expands our room for difference \u2014 giving people \"choices, possibilities, freedoms\" \u2014 and so improves human lives by enabling self\u2011expression and new opportunities. He says we have \"a moral obligation to invent technology so that every person on the globe has the potential to realize their true difference\" and that \"we should embrace technology because it is an essential part of our journey in finding out who we are.\" (From talk_id=19, \"How technology evolves\", transcript.)",
+    "context_count": 5,
+    "compliance": {
+      "distinct_talks": 3,
+      "avg_score": 0.468,
+      "prompt_chars": 12037,
+      "contains_title_in_response": true,
+      "is_concise": true
+    },
+    "context_preview": [
+      {
+        "talk_id": "19",
+        "title": "How technology evolves",
+        "score": 0.480394363,
+        "chunk_preview": "I don't know about you, but I haven't quite figured out exactly what technology means in my life. I've spent the past year thinking about wh..."
+      },
+      {
+        "talk_id": "19",
+        "title": "How technology evolves",
+        "score": 0.478185683,
+        "chunk_preview": " is accelerating evolution. It's accelerating the way in which we search for ideas. So if you have life hacking \u2014 life means hacking, the ga..."
+      },
+      {
+        "talk_id": "19",
+        "title": "How technology evolves",
+        "score": 0.476957321,
+        "chunk_preview": " potential to realize their true difference. We want a trillion zillion species of one individuals. That's what technology really wants. I'm..."
+      }
+    ]
+  },
+  {
+    "name": "recommendation",
+    "ok": true,
+    "response": "I recommend \"Averting the climate crisis\" by Al Gore. In the retrieved transcript Gore explicitly frames the talk around personal action: \"I want to focus on ... What can you do about the climate crisis?\" and then gives concrete, everyday steps: \"Reduce emissions in your home... Insulation, better design. Buy green electricity... buy a hybrid. Use light rail... Be a green consumer... Make a decision to live a carbon-neutral life\" and points listeners to a consumer carbon calculator at climatecrisis.net for practical follow\u2011through (context [1], [2]). These lines show the talk directly addresses climate change and lists specific actions individuals can take in daily life.",
+    "context_count": 5,
+    "compliance": {
+      "distinct_talks": 3,
+      "avg_score": 0.4939,
+      "prompt_chars": 14233,
+      "contains_title_in_response": true,
+      "is_concise": true
+    },
+    "context_preview": [
+      {
+        "talk_id": "1",
+        "title": "Averting the climate crisis",
+        "score": 0.526288092,
+        "chunk_preview": ", long, handwritten letter from my friend and partner and colleague Bill Clinton, saying, \"Congratulations on the new restaurant, Al!\" (Laug..."
+      },
+      {
+        "talk_id": "1",
+        "title": "Averting the climate crisis",
+        "score": 0.502883911,
+        "chunk_preview": " it should be \u2014 but there is more global warming pollution that comes from buildings than from cars and trucks. Cars and trucks are very sig..."
+      },
+      {
+        "talk_id": "53",
+        "title": "Greening the ghetto",
+        "score": 0.489829063,
+        "chunk_preview": " a huge portion of the city's resources was dedicated to serving them. If you're a mayor, you can do something about that. His administratio..."
+      }
+    ]
+  }
+]

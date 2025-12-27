@@ -11,10 +11,17 @@ import subprocess
 import sys
 from pathlib import Path
 
+# Import config to get chunk_size and overlap_ratio
+sys.path.insert(0, str(Path(__file__).parent))
+from config import get_config
+
 
 def run_eval(base_url: str, top_k: int, output_dir: Path, timeout: int = 60) -> dict:
     """Run evaluation with specified top_k value."""
-    output_file = output_dir / f"eval_k{top_k}.json"
+    # Create subdirectory for this parameter combination
+    param_dir = output_dir / f"k{top_k}"
+    param_dir.mkdir(exist_ok=True, parents=True)
+    output_file = param_dir / "eval_results.json"
     
     print(f"\n{'='*80}")
     print(f"Evaluating with TOP_K={top_k}")
@@ -82,20 +89,26 @@ def main() -> None:
     parser.add_argument("--timeout", type=int, default=60)
     args = parser.parse_args()
     
-    # Create output directory
-    args.output_dir.mkdir(exist_ok=True)
+    # Load config to get current hyperparameters
+    cfg = get_config()
+    param_name = f"size={cfg.chunk_size}_overlap={cfg.overlap_ratio}"
+    
+    # Create output directory with parameter name
+    param_dir = args.output_dir / param_name
+    param_dir.mkdir(exist_ok=True, parents=True)
     
     print(f"Running grid search for k={args.k_values}")
+    print(f"Hyperparameters: chunk_size={cfg.chunk_size}, overlap_ratio={cfg.overlap_ratio}")
     print(f"Target API: {args.base_url}")
-    print(f"Results will be saved to: {args.output_dir}/\n")
+    print(f"Results will be saved to: {param_dir}/\n")
     
     all_results = []
     for k in args.k_values:
-        result = run_eval(args.base_url, k, args.output_dir, args.timeout)
+        result = run_eval(args.base_url, k, param_dir, args.timeout)
         all_results.append(result)
     
     # Save combined summary
-    summary_file = args.output_dir / "grid_summary.json"
+    summary_file = param_dir / "grid_summary.json"
     with open(summary_file, "w", encoding="utf-8") as f:
         json.dump(all_results, f, indent=2)
     print(f"\nSaved combined summary to {summary_file}")

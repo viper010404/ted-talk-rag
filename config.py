@@ -5,7 +5,7 @@ import os
 @dataclass(frozen=True)
 class RagConfig:
     # RAG hyperparameters
-    chunk_size: int = int(os.getenv("CHUNK_SIZE", "1300"))
+    chunk_size: int = int(os.getenv("CHUNK_SIZE", "600"))
     overlap_ratio: float = float(os.getenv("OVERLAP_RATIO", "0.15"))
     top_k: int = int(os.getenv("TOP_K", "10"))
 

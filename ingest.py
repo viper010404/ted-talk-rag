@@ -11,6 +11,11 @@ import pandas as pd
 import requests
 import tiktoken
 from pinecone import Pinecone
+try:  # optional progress bar
+    from tqdm import tqdm
+except Exception:  # pragma: no cover - soft fallback
+    def tqdm(iterable, **kwargs):
+        return iterable
 
 from config import get_config
 
@@ -33,6 +38,20 @@ def require_env(name: str) -> str:
     if not val:
         raise RuntimeError(f"Missing required env var: {name}")
     return val
+
+
+def load_progress(path: Path) -> set[str]:
+    """Read processed talk_ids from a checkpoint file."""
+    if not path.exists():
+        return set()
+    with open(path, "r", encoding="utf-8") as f:
+        return {line.strip() for line in f if line.strip()}
+
+
+def append_progress(path: Path, talk_id: str) -> None:
+    """Append a processed talk_id to the checkpoint file."""
+    with open(path, "a", encoding="utf-8") as f:
+        f.write(f"{talk_id}\n")
 
 
 def chunk_text(text: str, chunk_size: int, overlap_ratio: float) -> List[str]:
@@ -95,7 +114,7 @@ def build_chunks(
 
     records: List[Tuple[str, dict]] = []
     rows = df if limit is None else df.head(limit)
-    for _, row in rows.iterrows():
+    for _, row in tqdm(rows.iterrows(), total=len(rows), desc="Talks"):
         talk_id = str(row["talk_id"])
         title = str(row["title"])
         speaker = str(row.get("speaker_1") or "")
@@ -147,6 +166,12 @@ def main() -> None:
     parser.add_argument("--batch-size", type=int, default=32, help="Embedding/upsert batch size")
     parser.add_argument("--namespace", type=str, default="default")
     parser.add_argument("--dry-run", action="store_true", help="Chunk only, no embeddings")
+    parser.add_argument(
+        "--progress-file",
+        type=Path,
+        default=Path("ingest_progress.txt"),
+        help="Checkpoint file to skip already processed talks",
+    )
     args = parser.parse_args()
 
     pinecone_key = require_env("PINECONE_API_KEY")
@@ -163,29 +188,79 @@ def main() -> None:
     df = load_dataset(args.dataset)
     print(f"Loaded {len(df)} rows from {args.dataset}")
 
-    print("Chunking transcripts...")
-    records = build_chunks(df, cfg.chunk_size, cfg.overlap_ratio, args.limit)
-    print(f"Prepared {len(records)} chunks")
+    # Progress tracking
+    processed = load_progress(args.progress_file)
+    if processed:
+        print(f"Found {len(processed)} processed talks in {args.progress_file}; they will be skipped")
+
+    rows = df if args.limit is None else df.head(args.limit)
+    total_chunks = 0
+    ingested_talks = 0
+
+    pc = Pinecone(api_key=pinecone_key) if not args.dry_run else None
+
+    for _, row in rows.iterrows():
+        talk_id = str(row["talk_id"])
+        if talk_id in processed:
+            continue
+
+        title = str(row["title"])
+        speaker = str(row.get("speaker_1") or "")
+        topics = str(row.get("topics") or "")
+        description = str(row.get("description") or "")
+        recorded_date = str(row.get("recorded_date") or "")
+        native_lang = str(row.get("native_lang") or "")
+        url = str(row.get("url") or "")
+        transcript = row.get("transcript")
+        if not isinstance(transcript, str) or not transcript.strip():
+            continue
+
+        chunks = chunk_text(transcript, cfg.chunk_size, cfg.overlap_ratio)
+        if not chunks:
+            continue
+
+        # Build records for this talk
+        records: List[Tuple[str, dict]] = []
+        for idx, chunk in enumerate(chunks):
+            vector_id = f"{talk_id}-{idx}"
+            metadata = {
+                "talk_id": talk_id,
+                "title": title,
+                "speaker": speaker,
+                "topics": topics,
+                "description": description,
+                "recorded_date": recorded_date,
+                "native_lang": native_lang,
+                "url": url,
+                "chunk_id": idx,
+                "text": chunk,
+            }
+            records.append((vector_id, metadata))
+
+        total_chunks += len(records)
+
+        if args.dry_run:
+            continue
+
+        # Embed and upsert for this talk
+        vectors: List[Tuple[str, List[float], dict]] = []
+        for batch in batched(records, args.batch_size):
+            texts = [meta["text"] for _, meta in batch]
+            embeds = embed_texts(texts, cfg.embedding_model, llm_api_key, model_base_url)
+            if any(len(vec) != cfg.embed_dim for vec in embeds):
+                raise RuntimeError("Received embedding with unexpected dimension")
+            for (vector_id, meta), vec in zip(batch, embeds):
+                vectors.append((vector_id, vec, meta))
+
+        upsert_vectors(pc, pinecone_host, vectors, args.namespace, args.batch_size)
+        append_progress(args.progress_file, talk_id)
+        ingested_talks += 1
 
     if args.dry_run:
-        print("Dry run complete; no embeddings or upserts performed.")
+        print(f"Dry run complete; prepared {total_chunks} chunks across {len(rows)} talks.")
         return
 
-    pc = Pinecone(api_key=pinecone_key)
-    print(f"Embedding with model {cfg.embedding_model}...")
-    vectors: List[Tuple[str, List[float], dict]] = []
-    for batch in batched(records, args.batch_size):
-        texts = [meta["text"] for _, meta in batch]
-        embeds = embed_texts(texts, cfg.embedding_model, llm_api_key, model_base_url)
-        if any(len(vec) != cfg.embed_dim for vec in embeds):
-            raise RuntimeError("Received embedding with unexpected dimension")
-        for (vector_id, meta), vec in zip(batch, embeds):
-            vectors.append((vector_id, vec, meta))
-
-    print(f"Upserting {len(vectors)} vectors to index '{pinecone_index}'...")
-    upsert_vectors(pc, pinecone_host, vectors, args.namespace, args.batch_size)
-
-    print("Ingestion complete with settings:")
+    print(f"Ingestion complete. Talks ingested: {ingested_talks}, chunks upserted: {total_chunks}")
     print(json.dumps(asdict(cfg), indent=2))
 
 

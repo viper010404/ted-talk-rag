@@ -1,0 +1,134 @@
+[
+  {
+    "name": "precise_fact",
+    "ok": true,
+    "response": "Title: \"8 secrets of success\"\n\nSpeaker: I don't know based on the provided TED data.\n\nWhy this talk fits: The transcript explicitly addresses overcoming fear/anxiety-related feelings: \"You've got to push through shyness and self-doubt. Goldie Hawn says, 'I always had self-doubts. I wasn't good enough; I wasn't smart enough. I didn't think I'd make it.'\" This shows the talk discusses pushing past shyness and self-doubt.",
+    "context_count": 15,
+    "compliance": {
+      "distinct_talks": 10,
+      "avg_score": 0.3006,
+      "prompt_chars": 62560,
+      "contains_title_in_response": true,
+      "is_concise": true
+    },
+    "context_preview": [
+      {
+        "talk_id": "70",
+        "title": "8 secrets of success",
+        "score": 0.414617538,
+        "chunk_preview": "This is really a two-hour presentation I give to high school students, cut down to three minutes. And it all started one day on a plane, on ..."
+      },
+      {
+        "talk_id": "66",
+        "title": "Do schools kill creativity?",
+        "score": 0.330732346,
+        "chunk_preview": " learning disorder.\" She couldn't concentrate; she was fidgeting. I think now they'd say she had ADHD. Wouldn't you? But this was the 1930s,..."
+      },
+      {
+        "talk_id": "47",
+        "title": "Chemical scum that dream of distant quasars",
+        "score": 0.329467773,
+        "chunk_preview": " back. But I have to tell you \u2014 and sorry, Richard \u2014 but I never did like biology field trips much \u2014 (Laughter) and I think we can just abou..."
+      }
+    ]
+  },
+  {
+    "name": "multi_list_3",
+    "ok": true,
+    "response": "The birth of the open-source learning revolution\nDo schools kill creativity?\nOne Laptop per Child",
+    "context_count": 15,
+    "compliance": {
+      "distinct_talks": 8,
+      "avg_score": 0.3478,
+      "prompt_chars": 70452,
+      "contains_title_in_response": true,
+      "is_concise": true
+    },
+    "context_preview": [
+      {
+        "talk_id": "25",
+        "title": "The birth of the open-source learning revolution",
+        "score": 0.426948547,
+        "chunk_preview": " make it free for people who do this whole idea of re-sampling, ripping, mixing, burning and sharing. OK, I'd like to conclude with just the..."
+      },
+      {
+        "talk_id": "70",
+        "title": "8 secrets of success",
+        "score": 0.420352936,
+        "chunk_preview": "This is really a two-hour presentation I give to high school students, cut down to three minutes. And it all started one day on a plane, on ..."
+      },
+      {
+        "talk_id": "25",
+        "title": "The birth of the open-source learning revolution",
+        "score": 0.384918213,
+        "chunk_preview": "I'm Rich Baraniuk and what I'd like to talk a little bit about today are some ideas that I think have just tremendous resonance with all the..."
+      }
+    ]
+  },
+  {
+    "name": "key_idea_summary",
+    "ok": true,
+    "response": "Talk: How technology evolves\n\nKey idea (summary): The speaker argues that technology expands the \"potential for difference\" in people's lives \u2014 giving choices, possibilities and freedoms \u2014 and so improves human opportunity and self\u2011expression. As the talk says, \"That's what technology brings us: choices, possibilities, freedoms,\" and we have \"a moral obligation to invent technology so that every person on the globe has the potential to realize their true difference.\" The talk frames technology as the medium that lets people create new opportunities and realize individual and cultural possibilities.",
+    "context_count": 15,
+    "compliance": {
+      "distinct_talks": 9,
+      "avg_score": 0.411,
+      "prompt_chars": 65150,
+      "contains_title_in_response": true,
+      "is_concise": true
+    },
+    "context_preview": [
+      {
+        "talk_id": "19",
+        "title": "How technology evolves",
+        "score": 0.488765717,
+        "chunk_preview": " in there, there was no room for any difference at all. That's the definition. There was no temperature. There was no difference whatsoever...."
+      },
+      {
+        "talk_id": "70",
+        "title": "8 secrets of success",
+        "score": 0.451156616,
+        "chunk_preview": "This is really a two-hour presentation I give to high school students, cut down to three minutes. And it all started one day on a plane, on ..."
+      },
+      {
+        "talk_id": "19",
+        "title": "How technology evolves",
+        "score": 0.448223114,
+        "chunk_preview": " is his chart, which is not quite published yet. But the most interesting aspect about this is that if you look at those red lines at the bo..."
+      }
+    ]
+  },
+  {
+    "name": "recommendation",
+    "ok": true,
+    "response": "I recommend \"Averting the climate crisis\" by Al Gore.\n\nJustification from the provided TED text:\n- The speaker explicitly asks \"What can you do?\" and then lists concrete, everyday actions: \"Reduce emissions in your home. ... Insulation, better design. Buy green electricity where you can. I mentioned automobiles \u2014 buy a hybrid. Use light rail.\" (transcript excerpt)\n- He also advises consumer and lifestyle choices: \"Be a green consumer. You have choices with everything you buy...\" and proposes \"Make a decision to live a carbon-neutral life\" with tools: \"There is a carbon calculator... to precisely calculate what your CO2 emissions are, and then you will be given options to reduce.\" (transcript excerpt)\n- He includes civic actions individuals can take: \"Become politically active... Support the idea of capping carbon dioxide emissions \u2014 global warming pollution \u2014 and trading it.\" (transcript excerpt)\n\nThese passages show the talk directly addresses climate change and gives practical, daily-life actions (home, transport, consumption, carbon offsets, political engagement), so it best matches your request.",
+    "context_count": 15,
+    "compliance": {
+      "distinct_talks": 10,
+      "avg_score": 0.4141,
+      "prompt_chars": 69205,
+      "contains_title_in_response": true,
+      "is_concise": true
+    },
+    "context_preview": [
+      {
+        "talk_id": "1",
+        "title": "Averting the climate crisis",
+        "score": 0.50775528,
+        "chunk_preview": "Thank you so much, Chris. And it's truly a great honor to have the opportunity to come to this stage twice; I'm extremely grateful. I have b..."
+      },
+      {
+        "talk_id": "53",
+        "title": "Greening the ghetto",
+        "score": 0.490488082,
+        "chunk_preview": " the bottom line is: their people-first agenda was not meant to penalize those who could actually afford cars, but rather, to provide opport..."
+      },
+      {
+        "talk_id": "1",
+        "title": "Averting the climate crisis",
+        "score": 0.481247902,
+        "chunk_preview": " you know? Every time the tide comes in and out, you find some more shells. Just in the last two days, we got the new temperature records in..."
+      }
+    ]
+  }
+]

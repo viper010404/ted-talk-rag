@@ -1,0 +1,134 @@
+[
+  {
+    "name": "precise_fact",
+    "ok": true,
+    "response": "I don't know based on the provided TED data.\n\nThe provided transcript does include a talk that discusses fear and worry: \"The surprising science of happiness\" (talk_id=97). For example, the speaker says, \"When our fears are bounded, we're prudent... When our fears are unbounded and overblown, we're reckless, and we're cowardly,\" and later, \"our longings and our worries are both to some degree overblown, because we have within us the capacity to manufacture the very commodity we are constantly chasing...\" These lines show the talk addresses fear/anxiety and how we cope with it. The speaker's name is not given in the provided TED excerpts, so I cannot provide the speaker.",
+    "context_count": 15,
+    "compliance": {
+      "distinct_talks": 9,
+      "avg_score": 0.3315,
+      "prompt_chars": 33165,
+      "contains_title_in_response": true,
+      "is_concise": true
+    },
+    "context_preview": [
+      {
+        "talk_id": "97",
+        "title": "The surprising science of happiness",
+        "score": 0.401831657,
+        "chunk_preview": " When our fears are unbounded and overblown, we're reckless, and we're cowardly. The lesson I want to leave you with, from these data, is th..."
+      },
+      {
+        "talk_id": "70",
+        "title": "8 secrets of success",
+        "score": 0.399805,
+        "chunk_preview": "This is really a two-hour presentation I give to high school students, cut down to three minutes. And it all started one day on a plane, on ..."
+      },
+      {
+        "talk_id": "70",
+        "title": "8 secrets of success",
+        "score": 0.382766724,
+        "chunk_preview": " Gehry said to me, \"My mother pushed me.\" (Laughter) Serve! Sherwin Nuland says, \"It was a privilege to serve as a doctor.\" A lot of kids wa..."
+      }
+    ]
+  },
+  {
+    "name": "multi_list_3",
+    "ok": true,
+    "response": "One Laptop per Child\nDo schools kill creativity?\nThe birth of the open-source learning revolution",
+    "context_count": 15,
+    "compliance": {
+      "distinct_talks": 6,
+      "avg_score": 0.3835,
+      "prompt_chars": 35870,
+      "contains_title_in_response": true,
+      "is_concise": true
+    },
+    "context_preview": [
+      {
+        "talk_id": "41",
+        "title": "One Laptop per Child",
+        "score": 0.455001861,
+        "chunk_preview": "I've been at MIT for 44 years. I went to TED I. There's only one other person here, I think, who did that. All the other TEDs \u2014 and I went t..."
+      },
+      {
+        "talk_id": "66",
+        "title": "Do schools kill creativity?",
+        "score": 0.438289642,
+        "chunk_preview": "Good morning. How are you? (Audience) Good. It's been great, hasn't it? I've been blown away by the whole thing. In fact, I'm leaving. (Laug..."
+      },
+      {
+        "talk_id": "70",
+        "title": "8 secrets of success",
+        "score": 0.396053255,
+        "chunk_preview": "This is really a two-hour presentation I give to high school students, cut down to three minutes. And it all started one day on a plane, on ..."
+      }
+    ]
+  },
+  {
+    "name": "key_idea_summary",
+    "ok": true,
+    "response": "Title: The accelerating power of technology\n\nSummary: In this talk the speaker argues that technological progress is exponential and can substantially improve people\u2019s lives \u2014 expanding human intelligence, raising life expectancy, and helping to \u201covercome disease and poverty.\u201d For example, he describes a \u201ctremendous expansion of human intelligence through this direct merger with our technology\u201d and says nano\u2011engineered designs could provide lightweight, inexpensive solar power so \u201cwe'd be able to actually provide all of our energy needs,\u201d while noting \u201cwe have the potential to overcome disease and poverty\u201d if we apply these technologies to the right problems. (Paraphrased from the provided transcript.)",
+    "context_count": 15,
+    "compliance": {
+      "distinct_talks": 9,
+      "avg_score": 0.4319,
+      "prompt_chars": 34755,
+      "contains_title_in_response": true,
+      "is_concise": true
+    },
+    "context_preview": [
+      {
+        "talk_id": "19",
+        "title": "How technology evolves",
+        "score": 0.49580574,
+        "chunk_preview": " being born whose technology of self-expression has not yet been invented. We have a moral obligation to invent technology so that every per..."
+      },
+      {
+        "talk_id": "19",
+        "title": "How technology evolves",
+        "score": 0.48077774,
+        "chunk_preview": "I don't know about you, but I haven't quite figured out exactly what technology means in my life. I've spent the past year thinking about wh..."
+      },
+      {
+        "talk_id": "38",
+        "title": "The accelerating power of technology",
+        "score": 0.466871262,
+        "chunk_preview": " coming from your real senses, replace them with the signals that your brain would be receiving if you were in the virtual environment, and ..."
+      }
+    ]
+  },
+  {
+    "name": "recommendation",
+    "ok": true,
+    "response": "I recommend \"Averting the climate crisis\" by Al Gore.\n\nJustification from the retrieved TED transcript:\n- Gore explicitly frames the talk around the question \"What can you do about the climate crisis?\" and then lists concrete, everyday actions (quote/paraphrase): \"Reduce emissions in your home... Insulation, better design. Buy green electricity where you can\" and \"Buy a hybrid. Use light rail\" ([1], [3], [6]).\n- He advises consumer and business steps: \"Be a green consumer... Consider making your business carbon-neutral\" and describes living \"a carbon-neutral life\" using a consumer-friendly carbon calculator at climatecrisis.net to calculate and offset your CO2 ([3]).\n- He also urges civic action that individuals can take: \"Become politically active... Support the idea of capping carbon dioxide emissions \u2014 global warming pollution \u2014 and trading it\" ([2]).\n\nThese passages show the talk combines practical daily measures (home, transport, purchasing, offsets) with civic steps\u2014making it the best match in the provided TED data for climate change advice for individuals.",
+    "context_count": 15,
+    "compliance": {
+      "distinct_talks": 6,
+      "avg_score": 0.4348,
+      "prompt_chars": 37806,
+      "contains_title_in_response": true,
+      "is_concise": true
+    },
+    "context_preview": [
+      {
+        "talk_id": "1",
+        "title": "Averting the climate crisis",
+        "score": 0.54072386,
+        "chunk_preview": " to elaborate on: What can you do about the climate crisis? I want to start with a couple of \u2014 I'm going to show some new images, and I'm go..."
+      },
+      {
+        "talk_id": "1",
+        "title": "Averting the climate crisis",
+        "score": 0.496974,
+        "chunk_preview": " it. Consider sending somebody to Nashville. Pick well. And I am personally going to train people to give this slideshow \u2014 re-purposed, with..."
+      },
+      {
+        "talk_id": "1",
+        "title": "Averting the climate crisis",
+        "score": 0.485374451,
+        "chunk_preview": " home. Most of these expenditures are also profitable. Insulation, better design. Buy green electricity where you can. I mentioned automobil..."
+      }
+    ]
+  }
+]
