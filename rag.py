@@ -94,7 +94,7 @@ class RAGService:
                 {"role": "system", "content": system},
                 {"role": "user", "content": user},
             ],
-            "temperature": 0.2,
+            "temperature": 1,
         }
         resp = requests.post(url, headers=headers, json=payload, timeout=60)
         if resp.status_code != 200:
