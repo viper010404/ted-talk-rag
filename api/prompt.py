@@ -1,6 +1,7 @@
 """POST /api/prompt endpoint handler.
 
-Accepts JSON payload with 'question' and optional 'top_k' parameter.
+Accepts JSON payload with 'question' only. Server enforces configured
+retrieval depth (top_k) and does not accept client overrides.
 Returns RAG-augmented response with retrieved context.
 """
 
@@ -41,9 +42,6 @@ class handler(BaseHTTPRequestHandler):
         try:
             load_dotenv()
             cfg = get_config()
-            top_k = data.get("top_k", cfg.top_k)
-            if not isinstance(top_k, int) or top_k < 1 or top_k > 30:
-                top_k = cfg.top_k
 
             env = RAGEnv(
                 models_api_key=require_env("MODELS_API_KEY"),
@@ -52,7 +50,8 @@ class handler(BaseHTTPRequestHandler):
                 pinecone_host=require_env("PINECONE_HOST"),
                 namespace=os.getenv("PINECONE_NAMESPACE", "default"),
             )
-            service = RAGService(env=env, top_k=top_k)
+            # Do not allow client overrides of top_k; enforce config value.
+            service = RAGService(env=env, top_k=cfg.top_k)
             result = service.answer(question)
 
             self.send_response(200)

@@ -12,7 +12,7 @@ class RagConfig:
     """Immutable configuration values sourced from environment variables."""
     chunk_size: int = int(os.getenv("CHUNK_SIZE", "600"))
     overlap_ratio: float = float(os.getenv("OVERLAP_RATIO", "0.15"))
-    top_k: int = int(os.getenv("TOP_K", "10"))
+    top_k: int = int(os.getenv("TOP_K", "20"))
 
     embedding_model: str = os.getenv("EMBEDDING_MODEL", "RPRTHPB-text-embedding-3-small")
     embed_dim: int = int(os.getenv("EMBED_DIM", "1536"))

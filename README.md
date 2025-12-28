@@ -8,7 +8,7 @@ Built a retrieval-augmented QA system over the TED dataset using provided models
 
 **Implementation**: Batched, resumable ingest with checkpointing. RAGService handles embed → retrieve → prompt → chat. Two endpoints: `/api/prompt` (answers) and `/api/stats` (config).
 
-**Hyperparameter Tuning**: Swept 3 chunk sizes (600, 1300, 2000) × 3 overlaps (0.05, 0.15, 0.25) × 4 top_k values (5, 7, 10, 15) on 50 talks each (~36 runs total) to balance signal with API costs. Selected **chunk_size=600, overlap=0.15, top_k=5** (all 4/4 compliance, mean similarity 0.4384).
+**Hyperparameter tuning**: See the structured section below for the two-step process and final selection.
 
 ## Chunking Strategy
 Token-based with configurable overlap. Each chunk stored with talk metadata: talk_id, title, speaker, topics, description, recorded_date, url, chunk_id, text.
@@ -25,24 +25,20 @@ python ingest.py --dataset data/ted_talks_en.csv --batch-size 32 --checkpoint-ev
 ```
 
 ## API Endpoints
-- POST `/api/prompt`: body `{ "question": str, "top_k"?: int }` → returns answer, context snippets, augmented prompt.
+- POST `/api/prompt`: body `{ "question": str }` → returns answer, context snippets, augmented prompt. The server enforces `top_k` from config (no client override).
 - GET `/api/stats`: returns current `chunk_size`, `overlap_ratio`, `top_k` from config.
 
 ## Hyperparameter Tuning
 
-Tested three key dimensions to optimize retrieval quality and cost:
+Below is a concise, structured summary of how we tuned the system and what we ultimately chose.
 
-- **Chunk sizes**: 600, 1300, 2000 tokens. Smaller chunks reduce embedding cost but may fragment context; larger chunks preserve topic coherence but increase per-query latency and prompt size.
-- **Overlap ratios**: 0.05, 0.15, 0.25. Higher overlap creates redundancy for better coverage at the cost of more chunks.
-- **Retrieval depth (top_k)**: 5, 7, 10, 15 retrieved chunks per query.
+**Step 1 — Subset Sweep (50 talks)**
+- Dimensions: chunk_size ∈ {600, 1300, 2000}, overlap ∈ {0.05, 0.15, 0.25}, top_k ∈ {5, 7, 10, 15}.
+- Metrics: compliance (4 checks aligned with the assignment’s four task examples) and mean similarity.
+- Outcome: initial pick **chunk_size=600, overlap=0.15, top_k=5** — strongest compliance and similarity on the subset at reasonable cost.
+- Raw results: [grid_summary.json](eval_results/size=600_overlap=0.15/grid_summary.json)
 
-To balance evaluation signal with budget and time, **all 36 configurations were tested on exactly 50 talks each**, yielding ~1.5% of the production talk count per run. This ensured fair comparison while keeping API costs manageable.
-
-**Metrics**: Compliance (distinct talks retrieved + title in response + response ≤1200 chars) and mean retrieval similarity score.
-
-**Result**: **chunk_size=600, overlap=0.15, top_k=5** achieved all 4/4 compliance on eval queries with best mean similarity (0.4384).
-
-**All runs** (passed/4, mean_similarity, distinct_talks, prompt_chars):
+**Subset results — all runs (passed/4, mean_similarity, distinct_talks, prompt_chars)**
 
 ### size=600_overlap=0.05 ([grid_summary.json](eval_results/size=600_overlap=0.05/grid_summary.json))
 | top_k | passed/4 | mean_avg_score | total_distinct | prompt_chars |
@@ -115,6 +111,29 @@ To balance evaluation signal with budget and time, **all 36 configurations were 
 | 7 | 3 | 0.4043 | 19 | 165971 |
 | 10 | 3 | 0.3877 | 27 | 237375 |
 | 15 | 4 | 0.3672 | 38 | 390307 |
+
+**Step 2 — Full-Index top_k Sweep**
+- Fixed chunking at the Step 1 choice (size=600, overlap=0.15).
+- Searched k ∈ {5, 10, 15, 20, 25, 30}; settled on **top_k=20** for improved distinct-talk diversity while keeping prompt size moderate.
+
+### Final k Sweep (full index; size=600, overlap=0.15)
+| top_k | passed/4 | mean_avg_score | total_distinct | prompt_chars |
+| --- | --- | --- | --- | --- |
+| 5 | 3 | 0.5277 | 16 | 50065 |
+| 10 | 3 | 0.5112 | 30 | 96944 |
+| 15 | 3 | 0.4972 | 31 | 106682 |
+| 20 | 3 | 0.4932 | 54 | 189274 |
+| 25 | 4 | 0.4872 | 66 | 236244 |
+| 30 | 3 | 0.4824 | 78 | 281750 |
+
+Source JSON: [grid_summary.json](eval_results_full_sweep/size=600_overlap=0.15/grid_summary.json)
+
+**Final Selection**
+- Parameters: **chunk_size=600**, **overlap=0.15**, **top_k=20**.
+- Why this model: balances diversity and brevity with moderate prompt sizes.
+- Reflected in code: see [config.py](config.py) and the `/api/stats` endpoint.
+
+
 
 
 ## Reproduction
