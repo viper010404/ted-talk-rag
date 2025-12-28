@@ -1,0 +1,9 @@
+.git
+.venv
+.venv_pdf
+eval_results
+data
+.DS_Store
+*.pyc
+__pycache__
+node_modules
