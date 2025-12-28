@@ -1,0 +1,109 @@
+[
+  {
+    "name": "precise_fact",
+    "ok": true,
+    "response": "Title: \"It's OK to feel overwhelmed. Here's what to do next\"\nSpeaker: Elizabeth Gilbert\n\nExplanation from the provided TED transcript: the session is labeled with Elizabeth Gilbert (EG) and explicitly addresses anxiety and fear \u2014 e.g., Chris Anderson asks, \"Have you been feeling anxiety, Liz?\" and EG responds, \"I have been...\" ([20], [29]). The program also references Gilbert's book subtitle \"Creative Living Beyond Fear,\" linking the talk to fear/anxiety themes ([20]).",
+    "context_count": 30,
+    "compliance": {
+      "distinct_talks": 18,
+      "avg_score": 0.4624,
+      "prompt_chars": 68484,
+      "contains_title_in_response": true,
+      "is_concise": true
+    },
+    "context_preview": [
+      {
+        "talk_id": "2485",
+        "title": "TED's secret to great public speaking",
+        "score": 0.525098801,
+        "chunk_preview": "Some people think that there's a TED Talk formula: \"Give a talk on a round, red rug.\" \"Share a childhood story.\" \"Divulge a personal secret...."
+      },
+      {
+        "talk_id": "1962",
+        "title": "It's TED, the Musical",
+        "score": 0.510169,
+        "chunk_preview": " like Reggie Watts \u266a All: \u266a and bring out a prop like Jill Bolte Taylor. \u266a DH: \u266a My time is running over. The clock now says nil. \u266a \u266a I'm sa..."
+      },
+      {
+        "talk_id": "846",
+        "title": "Lies, damned lies and statistics (about TEDTalks)",
+        "score": 0.506052,
+        "chunk_preview": "If you go on the TED website, you can currently find there over a full week of TEDTalk videos, over 1.3 million words of transcripts and mil..."
+      }
+    ]
+  },
+  {
+    "name": "multi_list_3",
+    "ok": true,
+    "response": "The global learning crisis -- and what to do about it\nKids can teach themselves\nDo schools kill creativity?",
+    "context_count": 30,
+    "compliance": {
+      "distinct_talks": 20,
+      "avg_score": 0.4482,
+      "prompt_chars": 71325,
+      "contains_title_in_response": true,
+      "is_concise": true
+    },
+    "context_preview": [
+      {
+        "talk_id": "955",
+        "title": "How web video powers global innovation",
+        "score": 0.508880675,
+        "chunk_preview": " now could get their ideas to spread far and wide, and so the art of the spoken word pretty much withered on the vine. But now, in the blink..."
+      },
+      {
+        "talk_id": "2485",
+        "title": "TED's secret to great public speaking",
+        "score": 0.494064331,
+        "chunk_preview": "Some people think that there's a TED Talk formula: \"Give a talk on a round, red rug.\" \"Share a childhood story.\" \"Divulge a personal secret...."
+      },
+      {
+        "talk_id": "846",
+        "title": "Lies, damned lies and statistics (about TEDTalks)",
+        "score": 0.491243362,
+        "chunk_preview": "If you go on the TED website, you can currently find there over a full week of TEDTalk videos, over 1.3 million words of transcripts and mil..."
+      }
+    ]
+  },
+  {
+    "name": "key_idea_summary",
+    "ok": true,
+    "response": "Talk: \"Are droids taking our jobs?\"\n\nSummary (from the provided transcript): The speaker argues that technology\u2014especially digital tools and mobile connectivity\u2014can improve people's lives and broaden opportunity. As the talk notes, \"the bottom of the pyramid is benefiting hugely from technology,\" citing Robert Jensen's study of Kerala where mobile phones helped stabilize prices, \"waste was not reduced \u2014 it was eliminated,\" and \"the lives of both the buyers and the sellers in these villages measurably improved.\" The speaker also emphasizes that innovation is becoming \"more open, more inclusive, more transparent and more merit-based,\" so technology widens who can contribute and benefit.",
+    "context_count": 30,
+    "compliance": {
+      "distinct_talks": 21,
+      "avg_score": 0.4933,
+      "prompt_chars": 67960,
+      "contains_title_in_response": true,
+      "is_concise": true
+    },
+    "context_preview": [
+      {
+        "talk_id": "2485",
+        "title": "TED's secret to great public speaking",
+        "score": 0.59623909,
+        "chunk_preview": "Some people think that there's a TED Talk formula: \"Give a talk on a round, red rug.\" \"Share a childhood story.\" \"Divulge a personal secret...."
+      },
+      {
+        "talk_id": "846",
+        "title": "Lies, damned lies and statistics (about TEDTalks)",
+        "score": 0.548915863,
+        "chunk_preview": "If you go on the TED website, you can currently find there over a full week of TEDTalk videos, over 1.3 million words of transcripts and mil..."
+      },
+      {
+        "talk_id": "1315",
+        "title": "1,000 TED Talks in six words",
+        "score": 0.538946152,
+        "chunk_preview": "There's currently over a thousand TED Talks on the TED website. And I guess many of you here think that this is quite fantastic, except for ..."
+      }
+    ]
+  },
+  {
+    "name": "recommendation",
+    "ok": false,
+    "error": "Embedding request failed: 502 {\"status\":\"error\",\"code\":502,\"message\":\"Application failed to respond\",\"request_id\":\"LTyWf_1ATZGFEv_BPvyhXg\"}",
+    "raw": {
+      "error": "Embedding request failed: 502 {\"status\":\"error\",\"code\":502,\"message\":\"Application failed to respond\",\"request_id\":\"LTyWf_1ATZGFEv_BPvyhXg\"}"
+    }
+  }
+]

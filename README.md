@@ -139,7 +139,7 @@ Source JSON: [grid_summary.json](eval_results_full_sweep/size=600_overlap=0.15/g
 ## Reproduction
 1. Set env vars: `PINECONE_API_KEY`, `PINECONE_HOST`, `MODEL_BASE_URL`, `MODELS_API_KEY`.
 2. Ingest: `python ingest.py` (checkpoints to progress file; safe to rerun).
-3. Deploy or run locally; POST to `/api/prompt` with `{"question": "...", "top_k": 5}`.
+3. Deploy or run locally; POST to `/api/prompt` with `{"question": "..."}`.
 4. To re-eval: `python tools/eval_grid.py --base-url <url>` then `python tools/score_runs.py`.
 
 ## Code Map

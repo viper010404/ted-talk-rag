@@ -1,0 +1,805 @@
+[
+  {
+    "top_k": 5,
+    "results": [
+      {
+        "name": "precise_fact",
+        "ok": true,
+        "response": "I don't know based on the provided TED data.\n\nExplanation: The transcript excerpt for talk_id=480, title \"3 ways good design makes you happy,\" explicitly discusses fear and anxiety (for example: \"Intense fear paralyzes you. It actually affects the way the brain works.\" and \"that's what fear and anxiety does; it causes you to be \u2014 what's called depth-first processing \u2014 to focus, not be distracted\"). However, the provided TED data does not include the speaker name for that talk, so I cannot provide the speaker based only on the supplied context.",
+        "context_count": 5,
+        "compliance": {
+          "distinct_talks": 4,
+          "avg_score": 0.5043,
+          "prompt_chars": 10372,
+          "contains_title_in_response": true,
+          "is_concise": true
+        },
+        "context_preview": [
+          {
+            "talk_id": "2485",
+            "title": "TED's secret to great public speaking",
+            "score": 0.525098801,
+            "chunk_preview": "Some people think that there's a TED Talk formula: \"Give a talk on a round, red rug.\" \"Share a childhood story.\" \"Divulge a personal secret...."
+          },
+          {
+            "talk_id": "1962",
+            "title": "It's TED, the Musical",
+            "score": 0.510169,
+            "chunk_preview": " like Reggie Watts \u266a All: \u266a and bring out a prop like Jill Bolte Taylor. \u266a DH: \u266a My time is running over. The clock now says nil. \u266a \u266a I'm sa..."
+          },
+          {
+            "talk_id": "846",
+            "title": "Lies, damned lies and statistics (about TEDTalks)",
+            "score": 0.506052,
+            "chunk_preview": "If you go on the TED website, you can currently find there over a full week of TEDTalk videos, over 1.3 million words of transcripts and mil..."
+          }
+        ]
+      },
+      {
+        "name": "multi_list_3",
+        "ok": true,
+        "response": "How web video powers global innovation\nTED's secret to great public speaking\n1,000 TED Talks in six words",
+        "context_count": 5,
+        "compliance": {
+          "distinct_talks": 5,
+          "avg_score": 0.4918,
+          "prompt_chars": 13007,
+          "contains_title_in_response": true,
+          "is_concise": true
+        },
+        "context_preview": [
+          {
+            "talk_id": "955",
+            "title": "How web video powers global innovation",
+            "score": 0.508880675,
+            "chunk_preview": " now could get their ideas to spread far and wide, and so the art of the spoken word pretty much withered on the vine. But now, in the blink..."
+          },
+          {
+            "talk_id": "2485",
+            "title": "TED's secret to great public speaking",
+            "score": 0.494064331,
+            "chunk_preview": "Some people think that there's a TED Talk formula: \"Give a talk on a round, red rug.\" \"Share a childhood story.\" \"Divulge a personal secret...."
+          },
+          {
+            "talk_id": "846",
+            "title": "Lies, damned lies and statistics (about TEDTalks)",
+            "score": 0.491243362,
+            "chunk_preview": "If you go on the TED website, you can currently find there over a full week of TEDTalk videos, over 1.3 million words of transcripts and mil..."
+          }
+        ]
+      },
+      {
+        "name": "key_idea_summary",
+        "ok": true,
+        "response": "I recommend the clip titled \"Elora Hardy \u2014 building from bamboo is beautiful\" (speaker: Elora Hardy), cited in the transcript of \"TED's secret to great public speaking.\" Key idea: using bamboo as a building technology can improve people's lives by providing a locally available, strong, elegant and safer form of housing \u2014 as Elora Hardy says, \"It is growing all around us, it's strong, it's elegant, it's earthquake-resistant.\" This quote from the provided transcript supports the claim that the technology (bamboo construction) makes living conditions better.",
+        "context_count": 5,
+        "compliance": {
+          "distinct_talks": 4,
+          "avg_score": 0.5469,
+          "prompt_chars": 13303,
+          "contains_title_in_response": true,
+          "is_concise": true
+        },
+        "context_preview": [
+          {
+            "talk_id": "2485",
+            "title": "TED's secret to great public speaking",
+            "score": 0.59623909,
+            "chunk_preview": "Some people think that there's a TED Talk formula: \"Give a talk on a round, red rug.\" \"Share a childhood story.\" \"Divulge a personal secret...."
+          },
+          {
+            "talk_id": "846",
+            "title": "Lies, damned lies and statistics (about TEDTalks)",
+            "score": 0.548915863,
+            "chunk_preview": "If you go on the TED website, you can currently find there over a full week of TEDTalk videos, over 1.3 million words of transcripts and mil..."
+          },
+          {
+            "talk_id": "1315",
+            "title": "1,000 TED Talks in six words",
+            "score": 0.538946152,
+            "chunk_preview": "There's currently over a thousand TED Talks on the TED website. And I guess many of you here think that this is quite fantastic, except for ..."
+          }
+        ]
+      },
+      {
+        "name": "recommendation",
+        "ok": true,
+        "response": "I recommend talk_id=29968 \u2014 \"The most important thing you can do to fight climate change: talk about it.\"\n\nJustification from the retrieved TED data:\n- The speaker gives concrete, everyday actions people can take: she cites \u201csimple solutions that save us money and reduce our carbon footprint at the same time. Yes, light bulbs. I love my plug-in car. I'd like some solar shingles.\u201d (context [1]).\n- She lists lifestyle choices people can adopt: \u201ceating local, eating lower down the food chain and reducing food waste, which at the global scale, is one of the most important things that we can do to fix this problem.\u201d (context [1]).\n- She also models practical behavioral changes to reduce personal emissions (e.g., minimizing travel, using video): \u201cThe biggest part of my personal carbon footprint is my travel... I usually don't go anywhere unless I have a critical mass of invitations... and I've transitioned nearly three-quarters of the talks I give to video.\u201d (context [1]).\n- In addition, the talk explains how to talk about climate with others by connecting to shared values so individuals can influence their communities \u2014 \u201cstart from the heart... begin by talking about why it matters to us, to begin with genuinely shared values.\u201d (context [2]).\n\nThese excerpts show this talk combines clear, actionable daily-life tips with guidance on how to engage others \u2014 matching your request for a talk about climate change and what individuals can do.",
+        "context_count": 5,
+        "compliance": {
+          "distinct_talks": 3,
+          "avg_score": 0.5678,
+          "prompt_chars": 13383,
+          "contains_title_in_response": true,
+          "is_concise": false
+        },
+        "context_preview": [
+          {
+            "talk_id": "29968",
+            "title": "The most important thing you can do to fight climate change: talk about it",
+            "score": 0.592378616,
+            "chunk_preview": " change supersize our droughts, making them more frequent and more severe. Wherever we live, we're already being affected by a changing clim..."
+          },
+          {
+            "talk_id": "29968",
+            "title": "The most important thing you can do to fight climate change: talk about it",
+            "score": 0.572835863,
+            "chunk_preview": " if we aren't supposed to talk about more science, or if we don't need to talk about more science, then what should we be talking about? The..."
+          },
+          {
+            "talk_id": "29968",
+            "title": "The most important thing you can do to fight climate change: talk about it",
+            "score": 0.571212769,
+            "chunk_preview": " about climate change, because it is absolutely unfair. Those who have contributed the least to the problem are bearing the brunt of the imp..."
+          }
+        ]
+      }
+    ],
+    "output_file": "eval_results_full_sweep/size=600_overlap=0.15/k5/eval_results.json"
+  },
+  {
+    "top_k": 10,
+    "results": [
+      {
+        "name": "precise_fact",
+        "ok": true,
+        "response": "Talk: \"Listening to shame\" \u2014 Speaker: Dr. Brown.\n\nEvidence from the provided TED transcript: Dr. Brown frames shame and vulnerability as obstacles people get \"paralyzed\" by and argues for overcoming them \u2014 e.g., \"you cannot talk about race without talking about privilege. And when people start talking about privilege, they get paralyzed by shame\" and later, \"vulnerability is not weakness\" and \"vulnerability is the birthplace of innovation, creativity and change.\" She also notes TED as \"the failure conference\" \u2014 \"very few people here are afraid to fail\" \u2014 all of which show the talk addresses moving past fear/shame and anxiety.",
+        "context_count": 10,
+        "compliance": {
+          "distinct_talks": 7,
+          "avg_score": 0.4948,
+          "prompt_chars": 23723,
+          "contains_title_in_response": true,
+          "is_concise": true
+        },
+        "context_preview": [
+          {
+            "talk_id": "2485",
+            "title": "TED's secret to great public speaking",
+            "score": 0.525098801,
+            "chunk_preview": "Some people think that there's a TED Talk formula: \"Give a talk on a round, red rug.\" \"Share a childhood story.\" \"Divulge a personal secret...."
+          },
+          {
+            "talk_id": "1962",
+            "title": "It's TED, the Musical",
+            "score": 0.510169,
+            "chunk_preview": " like Reggie Watts \u266a All: \u266a and bring out a prop like Jill Bolte Taylor. \u266a DH: \u266a My time is running over. The clock now says nil. \u266a \u266a I'm sa..."
+          },
+          {
+            "talk_id": "846",
+            "title": "Lies, damned lies and statistics (about TEDTalks)",
+            "score": 0.506052,
+            "chunk_preview": "If you go on the TED website, you can currently find there over a full week of TEDTalk videos, over 1.3 million words of transcripts and mil..."
+          }
+        ]
+      },
+      {
+        "name": "multi_list_3",
+        "ok": true,
+        "response": "The global learning crisis -- and what to do about it\nHow to escape education's death valley\nOne Laptop per Child",
+        "context_count": 10,
+        "compliance": {
+          "distinct_talks": 9,
+          "avg_score": 0.4735,
+          "prompt_chars": 25417,
+          "contains_title_in_response": true,
+          "is_concise": true
+        },
+        "context_preview": [
+          {
+            "talk_id": "955",
+            "title": "How web video powers global innovation",
+            "score": 0.508880675,
+            "chunk_preview": " now could get their ideas to spread far and wide, and so the art of the spoken word pretty much withered on the vine. But now, in the blink..."
+          },
+          {
+            "talk_id": "2485",
+            "title": "TED's secret to great public speaking",
+            "score": 0.494064331,
+            "chunk_preview": "Some people think that there's a TED Talk formula: \"Give a talk on a round, red rug.\" \"Share a childhood story.\" \"Divulge a personal secret...."
+          },
+          {
+            "talk_id": "846",
+            "title": "Lies, damned lies and statistics (about TEDTalks)",
+            "score": 0.491243362,
+            "chunk_preview": "If you go on the TED website, you can currently find there over a full week of TEDTalk videos, over 1.3 million words of transcripts and mil..."
+          }
+        ]
+      },
+      {
+        "name": "key_idea_summary",
+        "ok": true,
+        "response": "Talk: \"Are droids taking our jobs?\" (talk_id=1574)\n\nShort summary \u2014 key idea: The speaker argues that technology can and does improve people\u2019s lives, including for the poorest. As the transcript notes, \"the bottom of the pyramid is benefiting hugely from technology,\" illustrated by Robert Jensen\u2019s study in Kerala where mobile phones made \"prices stabilized... waste was not reduced \u2014 it was eliminated. And the lives of both the buyers and the sellers in these villages measurably improved.\"",
+        "context_count": 10,
+        "compliance": {
+          "distinct_talks": 8,
+          "avg_score": 0.5236,
+          "prompt_chars": 23964,
+          "contains_title_in_response": true,
+          "is_concise": true
+        },
+        "context_preview": [
+          {
+            "talk_id": "2485",
+            "title": "TED's secret to great public speaking",
+            "score": 0.59623909,
+            "chunk_preview": "Some people think that there's a TED Talk formula: \"Give a talk on a round, red rug.\" \"Share a childhood story.\" \"Divulge a personal secret...."
+          },
+          {
+            "talk_id": "846",
+            "title": "Lies, damned lies and statistics (about TEDTalks)",
+            "score": 0.548915863,
+            "chunk_preview": "If you go on the TED website, you can currently find there over a full week of TEDTalk videos, over 1.3 million words of transcripts and mil..."
+          },
+          {
+            "talk_id": "1315",
+            "title": "1,000 TED Talks in six words",
+            "score": 0.538946152,
+            "chunk_preview": "There's currently over a thousand TED Talks on the TED website. And I guess many of you here think that this is quite fantastic, except for ..."
+          }
+        ]
+      },
+      {
+        "name": "recommendation",
+        "ok": true,
+        "response": "I recommend the talk \"Averting the climate crisis.\" It explicitly addresses everyday actions people can take \u2014 the talk asks \"Now, what can you do?\" and lists concrete steps: \"Reduce emissions in your home... Insulation, better design. Buy green electricity... buy a hybrid. Use light rail. ... Be a green consumer. You have choices with everything you buy\" (transcript). Those lines show it focuses on practical, daily-life choices individuals can make to lower their carbon footprint.",
+        "context_count": 10,
+        "compliance": {
+          "distinct_talks": 6,
+          "avg_score": 0.5528,
+          "prompt_chars": 23840,
+          "contains_title_in_response": true,
+          "is_concise": true
+        },
+        "context_preview": [
+          {
+            "talk_id": "29968",
+            "title": "The most important thing you can do to fight climate change: talk about it",
+            "score": 0.592378616,
+            "chunk_preview": " change supersize our droughts, making them more frequent and more severe. Wherever we live, we're already being affected by a changing clim..."
+          },
+          {
+            "talk_id": "29968",
+            "title": "The most important thing you can do to fight climate change: talk about it",
+            "score": 0.572835863,
+            "chunk_preview": " if we aren't supposed to talk about more science, or if we don't need to talk about more science, then what should we be talking about? The..."
+          },
+          {
+            "talk_id": "29968",
+            "title": "The most important thing you can do to fight climate change: talk about it",
+            "score": 0.571212769,
+            "chunk_preview": " about climate change, because it is absolutely unfair. Those who have contributed the least to the problem are bearing the brunt of the imp..."
+          }
+        ]
+      }
+    ],
+    "output_file": "eval_results_full_sweep/size=600_overlap=0.15/k10/eval_results.json"
+  },
+  {
+    "top_k": 15,
+    "results": [
+      {
+        "name": "precise_fact",
+        "ok": true,
+        "response": "I don't know based on the provided TED data.\n\nExplanation: The provided transcript excerpts show a talk titled \"The science of stage fright (and how to overcome it)\" that explicitly discusses overcoming fear/anxiety \u2014 e.g., the transcript begins, \"Palms sweaty, heart racing, stomach in knots... See, when you're dead, you feel nothing; at a podium, you feel stage fright,\" and later, \"How do we fight it? ... focus on what you can control. Practice a lot, starting long before in an environment similar to the real performance.\" These lines confirm the talk addresses overcoming stage fright, but the speaker's name is not given in the provided context.",
+        "context_count": 15,
+        "compliance": {
+          "distinct_talks": 11,
+          "avg_score": 0.4841,
+          "prompt_chars": 32573,
+          "contains_title_in_response": true,
+          "is_concise": true
+        },
+        "context_preview": [
+          {
+            "talk_id": "2485",
+            "title": "TED's secret to great public speaking",
+            "score": 0.525098801,
+            "chunk_preview": "Some people think that there's a TED Talk formula: \"Give a talk on a round, red rug.\" \"Share a childhood story.\" \"Divulge a personal secret...."
+          },
+          {
+            "talk_id": "1962",
+            "title": "It's TED, the Musical",
+            "score": 0.510169,
+            "chunk_preview": " like Reggie Watts \u266a All: \u266a and bring out a prop like Jill Bolte Taylor. \u266a DH: \u266a My time is running over. The clock now says nil. \u266a \u266a I'm sa..."
+          },
+          {
+            "talk_id": "846",
+            "title": "Lies, damned lies and statistics (about TEDTalks)",
+            "score": 0.506052,
+            "chunk_preview": "If you go on the TED website, you can currently find there over a full week of TEDTalk videos, over 1.3 million words of transcripts and mil..."
+          }
+        ]
+      },
+      {
+        "name": "multi_list_3",
+        "ok": true,
+        "response": "The global learning crisis -- and what to do about it\nHow to escape education's death valley\nBuild a School in the Cloud",
+        "context_count": 15,
+        "compliance": {
+          "distinct_talks": 12,
+          "avg_score": 0.4632,
+          "prompt_chars": 38178,
+          "contains_title_in_response": true,
+          "is_concise": true
+        },
+        "context_preview": [
+          {
+            "talk_id": "955",
+            "title": "How web video powers global innovation",
+            "score": 0.508880675,
+            "chunk_preview": " now could get their ideas to spread far and wide, and so the art of the spoken word pretty much withered on the vine. But now, in the blink..."
+          },
+          {
+            "talk_id": "2485",
+            "title": "TED's secret to great public speaking",
+            "score": 0.494064331,
+            "chunk_preview": "Some people think that there's a TED Talk formula: \"Give a talk on a round, red rug.\" \"Share a childhood story.\" \"Divulge a personal secret...."
+          },
+          {
+            "talk_id": "846",
+            "title": "Lies, damned lies and statistics (about TEDTalks)",
+            "score": 0.491243362,
+            "chunk_preview": "If you go on the TED website, you can currently find there over a full week of TEDTalk videos, over 1.3 million words of transcripts and mil..."
+          }
+        ]
+      },
+      {
+        "name": "key_idea_summary",
+        "ok": true,
+        "response": "Title: Are droids taking our jobs?\n\nSummary of key idea (based on the provided transcript): The speaker argues that technology improves people's lives\u2014especially for the poor\u2014by making markets and innovation more inclusive and efficient. For example, he cites Robert Jensen's study showing that when fishing villages in Kerala got mobile phones, \u201cprices stabilized\u2026waste was not reduced \u2014 it was eliminated. And the lives of both the buyers and the sellers in these villages measurably improved.\u201d He also notes that \u201cthe work of innovation is becoming more open, more inclusive, more transparent and more merit-based,\u201d so digital tools both raise welfare at the bottom of the pyramid and broaden who can contribute ideas.",
+        "context_count": 15,
+        "compliance": {
+          "distinct_talks": 12,
+          "avg_score": 0.5118,
+          "prompt_chars": 35178,
+          "contains_title_in_response": true,
+          "is_concise": true
+        },
+        "context_preview": [
+          {
+            "talk_id": "2485",
+            "title": "TED's secret to great public speaking",
+            "score": 0.59623909,
+            "chunk_preview": "Some people think that there's a TED Talk formula: \"Give a talk on a round, red rug.\" \"Share a childhood story.\" \"Divulge a personal secret...."
+          },
+          {
+            "talk_id": "846",
+            "title": "Lies, damned lies and statistics (about TEDTalks)",
+            "score": 0.548915863,
+            "chunk_preview": "If you go on the TED website, you can currently find there over a full week of TEDTalk videos, over 1.3 million words of transcripts and mil..."
+          },
+          {
+            "talk_id": "1315",
+            "title": "1,000 TED Talks in six words",
+            "score": 0.538946152,
+            "chunk_preview": "There's currently over a thousand TED Talks on the TED website. And I guess many of you here think that this is quite fantastic, except for ..."
+          }
+        ]
+      },
+      {
+        "name": "recommendation",
+        "ok": true,
+        "response": "I recommend: \"The most important thing you can do to fight climate change: talk about it\" \u2014 Katharine Hayhoe.\n\nJustification from the retrieved TED content:\n- The talk both urges everyday people to act and gives concrete daily-life steps: Hayhoe lists \"simple solutions that save us money and reduce our carbon footprint at the same time. Yes, light bulbs. I love my plug-in car. ... Lifestyle choices: eating local, eating lower down the food chain and reducing food waste\" and even practical habits like a switch to turn off everything when you leave the house and minimizing travel by grouping speaking engagements (context [1]).\n- Beyond actions, the talk focuses on the most accessible individual contribution: conversation. As the transcript states, \"The number one thing we can do is the exact thing that we're not doing: talk about it\" and she explains how to \"start from the heart\" by connecting climate to shared values so people will engage (contexts [14], [2]).\n- Because it pairs specific daily actions with guidance on how to motivate others (talking in ways that connect to values), this talk directly addresses \"what individuals can do in their daily lives.\"",
+        "context_count": 15,
+        "compliance": {
+          "distinct_talks": 8,
+          "avg_score": 0.5443,
+          "prompt_chars": 35931,
+          "contains_title_in_response": true,
+          "is_concise": true
+        },
+        "context_preview": [
+          {
+            "talk_id": "29968",
+            "title": "The most important thing you can do to fight climate change: talk about it",
+            "score": 0.592378616,
+            "chunk_preview": " change supersize our droughts, making them more frequent and more severe. Wherever we live, we're already being affected by a changing clim..."
+          },
+          {
+            "talk_id": "29968",
+            "title": "The most important thing you can do to fight climate change: talk about it",
+            "score": 0.572835863,
+            "chunk_preview": " if we aren't supposed to talk about more science, or if we don't need to talk about more science, then what should we be talking about? The..."
+          },
+          {
+            "talk_id": "29968",
+            "title": "The most important thing you can do to fight climate change: talk about it",
+            "score": 0.571212769,
+            "chunk_preview": " about climate change, because it is absolutely unfair. Those who have contributed the least to the problem are bearing the brunt of the imp..."
+          }
+        ]
+      }
+    ],
+    "output_file": "eval_results_full_sweep/size=600_overlap=0.15/k15/eval_results.json"
+  },
+  {
+    "top_k": 20,
+    "results": [
+      {
+        "name": "precise_fact",
+        "ok": true,
+        "response": "Title: It's OK to feel overwhelmed. Here's what to do next\nSpeaker: Elizabeth Gilbert\n\nEvidence from the provided TED transcript: Chris Anderson and Elizabeth Gilbert set the agenda to cover \"anxiety\" (CA: \"I wrote down a list here: about anxiety, loneliness, curiosity, creativity, procrastination, grief, connection and hope.\" / Elizabeth Gilbert: \"Let's do it.\"), and the discussion includes treating fear and anxiety (e.g., the talk recounts stories and advice about mitigating fear). These lines show the talk directly addresses anxiety and how to cope.",
+        "context_count": 20,
+        "compliance": {
+          "distinct_talks": 12,
+          "avg_score": 0.4755,
+          "prompt_chars": 44487,
+          "contains_title_in_response": true,
+          "is_concise": true
+        },
+        "context_preview": [
+          {
+            "talk_id": "2485",
+            "title": "TED's secret to great public speaking",
+            "score": 0.525098801,
+            "chunk_preview": "Some people think that there's a TED Talk formula: \"Give a talk on a round, red rug.\" \"Share a childhood story.\" \"Divulge a personal secret...."
+          },
+          {
+            "talk_id": "1962",
+            "title": "It's TED, the Musical",
+            "score": 0.510169,
+            "chunk_preview": " like Reggie Watts \u266a All: \u266a and bring out a prop like Jill Bolte Taylor. \u266a DH: \u266a My time is running over. The clock now says nil. \u266a \u266a I'm sa..."
+          },
+          {
+            "talk_id": "846",
+            "title": "Lies, damned lies and statistics (about TEDTalks)",
+            "score": 0.506052,
+            "chunk_preview": "If you go on the TED website, you can currently find there over a full week of TEDTalk videos, over 1.3 million words of transcripts and mil..."
+          }
+        ]
+      },
+      {
+        "name": "multi_list_3",
+        "ok": true,
+        "response": "The global learning crisis -- and what to do about it\nHow to escape education's death valley\nKids can teach themselves",
+        "context_count": 20,
+        "compliance": {
+          "distinct_talks": 16,
+          "avg_score": 0.4569,
+          "prompt_chars": 51447,
+          "contains_title_in_response": true,
+          "is_concise": true
+        },
+        "context_preview": [
+          {
+            "talk_id": "955",
+            "title": "How web video powers global innovation",
+            "score": 0.508880675,
+            "chunk_preview": " now could get their ideas to spread far and wide, and so the art of the spoken word pretty much withered on the vine. But now, in the blink..."
+          },
+          {
+            "talk_id": "2485",
+            "title": "TED's secret to great public speaking",
+            "score": 0.494064331,
+            "chunk_preview": "Some people think that there's a TED Talk formula: \"Give a talk on a round, red rug.\" \"Share a childhood story.\" \"Divulge a personal secret...."
+          },
+          {
+            "talk_id": "846",
+            "title": "Lies, damned lies and statistics (about TEDTalks)",
+            "score": 0.491243362,
+            "chunk_preview": "If you go on the TED website, you can currently find there over a full week of TEDTalk videos, over 1.3 million words of transcripts and mil..."
+          }
+        ]
+      },
+      {
+        "name": "key_idea_summary",
+        "ok": true,
+        "response": "Title: Are droids taking our jobs?\n\nSummary of key idea (from the provided transcript): The speaker argues that technology \u2014 especially digital tools and mobile phones \u2014 is improving people's lives, including those at the \u201cbottom of the pyramid.\u201d As evidence, he cites economist Robert Jensen\u2019s study of Kerala fishing villages, where \u201cwhen they got mobile phones for the very first time\u2026 Prices stabilized, so people could plan their economic lives. Waste was not reduced \u2014 it was eliminated. And the lives of both the buyers and the sellers in these villages measurably improved.\u201d He also emphasizes that \u201ceconomies run on ideas\u201d and that technological innovation is becoming \u201cmore open, more inclusive, more transparent and more merit-based,\u201d which further benefits people globally.",
+        "context_count": 20,
+        "compliance": {
+          "distinct_talks": 15,
+          "avg_score": 0.5038,
+          "prompt_chars": 45129,
+          "contains_title_in_response": true,
+          "is_concise": true
+        },
+        "context_preview": [
+          {
+            "talk_id": "2485",
+            "title": "TED's secret to great public speaking",
+            "score": 0.59623909,
+            "chunk_preview": "Some people think that there's a TED Talk formula: \"Give a talk on a round, red rug.\" \"Share a childhood story.\" \"Divulge a personal secret...."
+          },
+          {
+            "talk_id": "846",
+            "title": "Lies, damned lies and statistics (about TEDTalks)",
+            "score": 0.548915863,
+            "chunk_preview": "If you go on the TED website, you can currently find there over a full week of TEDTalk videos, over 1.3 million words of transcripts and mil..."
+          },
+          {
+            "talk_id": "1315",
+            "title": "1,000 TED Talks in six words",
+            "score": 0.538946152,
+            "chunk_preview": "There's currently over a thousand TED Talks on the TED website. And I guess many of you here think that this is quite fantastic, except for ..."
+          }
+        ]
+      },
+      {
+        "name": "recommendation",
+        "ok": true,
+        "response": "I recommend \"The most important thing you can do to fight climate change: talk about it\" by Katharine Hayhoe.\n\nJustification from the retrieved TED content:\n- Hayhoe pairs communication with practical, everyday personal actions: she explicitly lists \"simple solutions that save us money and reduce our carbon footprint at the same time. Yes, light bulbs. I love my plug-in car. I'd like some solar shingles\" and imagines \"a switch beside the front door, that when you left the house, you could turn off everything except your fridge\" ([1]).  \n- She also recommends lifestyle choices people can adopt: \"eating local, eating lower down the food chain and reducing food waste\" ([1]).  \n- She models individual behavior change with her own choices: \"The biggest part of my personal carbon footprint is my travel... I carefully collect my invitations... and I've transitioned nearly three-quarters of the talks I give to video\" ([1]).  \n- And she emphasizes the power of ordinary people talking about climate: \"The number one thing we can do is the exact thing that we're not doing: talk about it\" ([14]/[19]).\n\nThese passages show the talk addresses both how individuals can change daily habits and how personal conversation/action helps drive larger change.",
+        "context_count": 20,
+        "compliance": {
+          "distinct_talks": 11,
+          "avg_score": 0.5366,
+          "prompt_chars": 48211,
+          "contains_title_in_response": true,
+          "is_concise": false
+        },
+        "context_preview": [
+          {
+            "talk_id": "29968",
+            "title": "The most important thing you can do to fight climate change: talk about it",
+            "score": 0.592378616,
+            "chunk_preview": " change supersize our droughts, making them more frequent and more severe. Wherever we live, we're already being affected by a changing clim..."
+          },
+          {
+            "talk_id": "29968",
+            "title": "The most important thing you can do to fight climate change: talk about it",
+            "score": 0.572835863,
+            "chunk_preview": " if we aren't supposed to talk about more science, or if we don't need to talk about more science, then what should we be talking about? The..."
+          },
+          {
+            "talk_id": "29968",
+            "title": "The most important thing you can do to fight climate change: talk about it",
+            "score": 0.571212769,
+            "chunk_preview": " about climate change, because it is absolutely unfair. Those who have contributed the least to the problem are bearing the brunt of the imp..."
+          }
+        ]
+      }
+    ],
+    "output_file": "eval_results_full_sweep/size=600_overlap=0.15/k20/eval_results.json"
+  },
+  {
+    "top_k": 25,
+    "results": [
+      {
+        "name": "precise_fact",
+        "ok": true,
+        "response": "Title: \"It's OK to feel overwhelmed. Here's what to do next\"\nSpeaker: Elizabeth Gilbert\n\nI know this from the provided TED transcript: Chris Anderson introduces Elizabeth Gilbert for a conversation whose agenda explicitly includes \"anxiety\" (\"I wrote down a list here: about anxiety, loneliness, curiosity...\"), and the transcript labels her responses as \"EG: Elizabeth Gilbert.\" (Context [20]). Later in the same retrieved context Gilbert directly discusses fear and anxiety\u2014for example, telling the Amanda Eller story about turning fear into intuition: \"Please take my fear away... And she opened her eyes, and it was gone, and it was replaced by intuition.\" (Context [16]). Based on these passages, this talk addresses overcoming fear/anxiety.",
+        "context_count": 25,
+        "compliance": {
+          "distinct_talks": 16,
+          "avg_score": 0.4684,
+          "prompt_chars": 55434,
+          "contains_title_in_response": true,
+          "is_concise": true
+        },
+        "context_preview": [
+          {
+            "talk_id": "2485",
+            "title": "TED's secret to great public speaking",
+            "score": 0.525098801,
+            "chunk_preview": "Some people think that there's a TED Talk formula: \"Give a talk on a round, red rug.\" \"Share a childhood story.\" \"Divulge a personal secret...."
+          },
+          {
+            "talk_id": "1962",
+            "title": "It's TED, the Musical",
+            "score": 0.510169,
+            "chunk_preview": " like Reggie Watts \u266a All: \u266a and bring out a prop like Jill Bolte Taylor. \u266a DH: \u266a My time is running over. The clock now says nil. \u266a \u266a I'm sa..."
+          },
+          {
+            "talk_id": "846",
+            "title": "Lies, damned lies and statistics (about TEDTalks)",
+            "score": 0.506052,
+            "chunk_preview": "If you go on the TED website, you can currently find there over a full week of TEDTalk videos, over 1.3 million words of transcripts and mil..."
+          }
+        ]
+      },
+      {
+        "name": "multi_list_3",
+        "ok": true,
+        "response": "The global learning crisis -- and what to do about it\nKids can teach themselves\nWhy massive open online courses (still) matter",
+        "context_count": 25,
+        "compliance": {
+          "distinct_talks": 16,
+          "avg_score": 0.4521,
+          "prompt_chars": 61909,
+          "contains_title_in_response": true,
+          "is_concise": true
+        },
+        "context_preview": [
+          {
+            "talk_id": "955",
+            "title": "How web video powers global innovation",
+            "score": 0.508880675,
+            "chunk_preview": " now could get their ideas to spread far and wide, and so the art of the spoken word pretty much withered on the vine. But now, in the blink..."
+          },
+          {
+            "talk_id": "2485",
+            "title": "TED's secret to great public speaking",
+            "score": 0.494064331,
+            "chunk_preview": "Some people think that there's a TED Talk formula: \"Give a talk on a round, red rug.\" \"Share a childhood story.\" \"Divulge a personal secret...."
+          },
+          {
+            "talk_id": "846",
+            "title": "Lies, damned lies and statistics (about TEDTalks)",
+            "score": 0.491243362,
+            "chunk_preview": "If you go on the TED website, you can currently find there over a full week of TEDTalk videos, over 1.3 million words of transcripts and mil..."
+          }
+        ]
+      },
+      {
+        "name": "key_idea_summary",
+        "ok": true,
+        "response": "Title: Are droids taking our jobs?\n\nSummary: The speaker argues that technology can and does improve people's lives, including those at the \"bottom of the pyramid.\" As the transcript notes, \u201cthe bottom of the pyramid is benefiting hugely from technology,\u201d citing Robert Jensen\u2019s study in Kerala where, after villages got mobile phones, \u201cPrices stabilized\u2026 Waste was not reduced \u2014 it was eliminated. And the lives of both the buyers and the sellers in these villages measurably improved.\u201d This example is used to show how technology can raise welfare in underserved communities.",
+        "context_count": 25,
+        "compliance": {
+          "distinct_talks": 18,
+          "avg_score": 0.498,
+          "prompt_chars": 57108,
+          "contains_title_in_response": true,
+          "is_concise": true
+        },
+        "context_preview": [
+          {
+            "talk_id": "2485",
+            "title": "TED's secret to great public speaking",
+            "score": 0.59623909,
+            "chunk_preview": "Some people think that there's a TED Talk formula: \"Give a talk on a round, red rug.\" \"Share a childhood story.\" \"Divulge a personal secret...."
+          },
+          {
+            "talk_id": "846",
+            "title": "Lies, damned lies and statistics (about TEDTalks)",
+            "score": 0.548915863,
+            "chunk_preview": "If you go on the TED website, you can currently find there over a full week of TEDTalk videos, over 1.3 million words of transcripts and mil..."
+          },
+          {
+            "talk_id": "1315",
+            "title": "1,000 TED Talks in six words",
+            "score": 0.538946152,
+            "chunk_preview": "There's currently over a thousand TED Talks on the TED website. And I guess many of you here think that this is quite fantastic, except for ..."
+          }
+        ]
+      },
+      {
+        "name": "recommendation",
+        "ok": true,
+        "response": "I recommend: \"The most important thing you can do to fight climate change: talk about it\" \u2014 Katharine Hayhoe.\n\nJustification using the provided TED transcript:\n- The talk explicitly lists everyday, practical actions individuals can take: Hayhoe says \"There's simple solutions that save us money and reduce our carbon footprint at the same time. Yes, light bulbs. I love my plug-in car. I'd like some solar shingles.\" (context [1]).\n- She names lifestyle choices people can adopt at home: \"eating local, eating lower down the food chain and reducing food waste\" (context [1]).\n- She describes small behavioral changes to cut emissions (e.g., a switch by the front door to turn off everything except the fridge/DVR) and steps she personally takes to reduce travel emissions (grouping talks, using video) (context [1]).\n- The talk also focuses on what anyone can do to make a difference socially \u2014 starting conversations from shared values and \"talk[ing] about it\" as the most important individual action to break the silence and build support for solutions (contexts [14], [19]).\n\nThese excerpts show the talk combines concrete daily actions with guidance on how to influence others \u2014 matching your interest in climate change and what individuals can do in their daily lives.",
+        "context_count": 25,
+        "compliance": {
+          "distinct_talks": 16,
+          "avg_score": 0.5304,
+          "prompt_chars": 61793,
+          "contains_title_in_response": true,
+          "is_concise": false
+        },
+        "context_preview": [
+          {
+            "talk_id": "29968",
+            "title": "The most important thing you can do to fight climate change: talk about it",
+            "score": 0.592378616,
+            "chunk_preview": " change supersize our droughts, making them more frequent and more severe. Wherever we live, we're already being affected by a changing clim..."
+          },
+          {
+            "talk_id": "29968",
+            "title": "The most important thing you can do to fight climate change: talk about it",
+            "score": 0.572835863,
+            "chunk_preview": " if we aren't supposed to talk about more science, or if we don't need to talk about more science, then what should we be talking about? The..."
+          },
+          {
+            "talk_id": "29968",
+            "title": "The most important thing you can do to fight climate change: talk about it",
+            "score": 0.571212769,
+            "chunk_preview": " about climate change, because it is absolutely unfair. Those who have contributed the least to the problem are bearing the brunt of the imp..."
+          }
+        ]
+      }
+    ],
+    "output_file": "eval_results_full_sweep/size=600_overlap=0.15/k25/eval_results.json"
+  },
+  {
+    "top_k": 30,
+    "results": [
+      {
+        "name": "precise_fact",
+        "ok": true,
+        "response": "Title: \"It's OK to feel overwhelmed. Here's what to do next\"\nSpeaker: Elizabeth Gilbert\n\nExplanation from the provided TED transcript: the session is labeled with Elizabeth Gilbert (EG) and explicitly addresses anxiety and fear \u2014 e.g., Chris Anderson asks, \"Have you been feeling anxiety, Liz?\" and EG responds, \"I have been...\" ([20], [29]). The program also references Gilbert's book subtitle \"Creative Living Beyond Fear,\" linking the talk to fear/anxiety themes ([20]).",
+        "context_count": 30,
+        "compliance": {
+          "distinct_talks": 18,
+          "avg_score": 0.4624,
+          "prompt_chars": 68484,
+          "contains_title_in_response": true,
+          "is_concise": true
+        },
+        "context_preview": [
+          {
+            "talk_id": "2485",
+            "title": "TED's secret to great public speaking",
+            "score": 0.525098801,
+            "chunk_preview": "Some people think that there's a TED Talk formula: \"Give a talk on a round, red rug.\" \"Share a childhood story.\" \"Divulge a personal secret...."
+          },
+          {
+            "talk_id": "1962",
+            "title": "It's TED, the Musical",
+            "score": 0.510169,
+            "chunk_preview": " like Reggie Watts \u266a All: \u266a and bring out a prop like Jill Bolte Taylor. \u266a DH: \u266a My time is running over. The clock now says nil. \u266a \u266a I'm sa..."
+          },
+          {
+            "talk_id": "846",
+            "title": "Lies, damned lies and statistics (about TEDTalks)",
+            "score": 0.506052,
+            "chunk_preview": "If you go on the TED website, you can currently find there over a full week of TEDTalk videos, over 1.3 million words of transcripts and mil..."
+          }
+        ]
+      },
+      {
+        "name": "multi_list_3",
+        "ok": true,
+        "response": "The global learning crisis -- and what to do about it\nKids can teach themselves\nDo schools kill creativity?",
+        "context_count": 30,
+        "compliance": {
+          "distinct_talks": 20,
+          "avg_score": 0.4482,
+          "prompt_chars": 71325,
+          "contains_title_in_response": true,
+          "is_concise": true
+        },
+        "context_preview": [
+          {
+            "talk_id": "955",
+            "title": "How web video powers global innovation",
+            "score": 0.508880675,
+            "chunk_preview": " now could get their ideas to spread far and wide, and so the art of the spoken word pretty much withered on the vine. But now, in the blink..."
+          },
+          {
+            "talk_id": "2485",
+            "title": "TED's secret to great public speaking",
+            "score": 0.494064331,
+            "chunk_preview": "Some people think that there's a TED Talk formula: \"Give a talk on a round, red rug.\" \"Share a childhood story.\" \"Divulge a personal secret...."
+          },
+          {
+            "talk_id": "846",
+            "title": "Lies, damned lies and statistics (about TEDTalks)",
+            "score": 0.491243362,
+            "chunk_preview": "If you go on the TED website, you can currently find there over a full week of TEDTalk videos, over 1.3 million words of transcripts and mil..."
+          }
+        ]
+      },
+      {
+        "name": "key_idea_summary",
+        "ok": true,
+        "response": "Talk: \"Are droids taking our jobs?\"\n\nSummary (from the provided transcript): The speaker argues that technology\u2014especially digital tools and mobile connectivity\u2014can improve people's lives and broaden opportunity. As the talk notes, \"the bottom of the pyramid is benefiting hugely from technology,\" citing Robert Jensen's study of Kerala where mobile phones helped stabilize prices, \"waste was not reduced \u2014 it was eliminated,\" and \"the lives of both the buyers and the sellers in these villages measurably improved.\" The speaker also emphasizes that innovation is becoming \"more open, more inclusive, more transparent and more merit-based,\" so technology widens who can contribute and benefit.",
+        "context_count": 30,
+        "compliance": {
+          "distinct_talks": 21,
+          "avg_score": 0.4933,
+          "prompt_chars": 67960,
+          "contains_title_in_response": true,
+          "is_concise": true
+        },
+        "context_preview": [
+          {
+            "talk_id": "2485",
+            "title": "TED's secret to great public speaking",
+            "score": 0.59623909,
+            "chunk_preview": "Some people think that there's a TED Talk formula: \"Give a talk on a round, red rug.\" \"Share a childhood story.\" \"Divulge a personal secret...."
+          },
+          {
+            "talk_id": "846",
+            "title": "Lies, damned lies and statistics (about TEDTalks)",
+            "score": 0.548915863,
+            "chunk_preview": "If you go on the TED website, you can currently find there over a full week of TEDTalk videos, over 1.3 million words of transcripts and mil..."
+          },
+          {
+            "talk_id": "1315",
+            "title": "1,000 TED Talks in six words",
+            "score": 0.538946152,
+            "chunk_preview": "There's currently over a thousand TED Talks on the TED website. And I guess many of you here think that this is quite fantastic, except for ..."
+          }
+        ]
+      },
+      {
+        "name": "recommendation",
+        "ok": false,
+        "error": "Embedding request failed: 502 {\"status\":\"error\",\"code\":502,\"message\":\"Application failed to respond\",\"request_id\":\"LTyWf_1ATZGFEv_BPvyhXg\"}",
+        "raw": {
+          "error": "Embedding request failed: 502 {\"status\":\"error\",\"code\":502,\"message\":\"Application failed to respond\",\"request_id\":\"LTyWf_1ATZGFEv_BPvyhXg\"}"
+        }
+      }
+    ],
+    "output_file": "eval_results_full_sweep/size=600_overlap=0.15/k30/eval_results.json"
+  }
+]

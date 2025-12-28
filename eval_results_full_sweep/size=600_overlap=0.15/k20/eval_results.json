@@ -1,0 +1,134 @@
+[
+  {
+    "name": "precise_fact",
+    "ok": true,
+    "response": "Title: It's OK to feel overwhelmed. Here's what to do next\nSpeaker: Elizabeth Gilbert\n\nEvidence from the provided TED transcript: Chris Anderson and Elizabeth Gilbert set the agenda to cover \"anxiety\" (CA: \"I wrote down a list here: about anxiety, loneliness, curiosity, creativity, procrastination, grief, connection and hope.\" / Elizabeth Gilbert: \"Let's do it.\"), and the discussion includes treating fear and anxiety (e.g., the talk recounts stories and advice about mitigating fear). These lines show the talk directly addresses anxiety and how to cope.",
+    "context_count": 20,
+    "compliance": {
+      "distinct_talks": 12,
+      "avg_score": 0.4755,
+      "prompt_chars": 44487,
+      "contains_title_in_response": true,
+      "is_concise": true
+    },
+    "context_preview": [
+      {
+        "talk_id": "2485",
+        "title": "TED's secret to great public speaking",
+        "score": 0.525098801,
+        "chunk_preview": "Some people think that there's a TED Talk formula: \"Give a talk on a round, red rug.\" \"Share a childhood story.\" \"Divulge a personal secret...."
+      },
+      {
+        "talk_id": "1962",
+        "title": "It's TED, the Musical",
+        "score": 0.510169,
+        "chunk_preview": " like Reggie Watts \u266a All: \u266a and bring out a prop like Jill Bolte Taylor. \u266a DH: \u266a My time is running over. The clock now says nil. \u266a \u266a I'm sa..."
+      },
+      {
+        "talk_id": "846",
+        "title": "Lies, damned lies and statistics (about TEDTalks)",
+        "score": 0.506052,
+        "chunk_preview": "If you go on the TED website, you can currently find there over a full week of TEDTalk videos, over 1.3 million words of transcripts and mil..."
+      }
+    ]
+  },
+  {
+    "name": "multi_list_3",
+    "ok": true,
+    "response": "The global learning crisis -- and what to do about it\nHow to escape education's death valley\nKids can teach themselves",
+    "context_count": 20,
+    "compliance": {
+      "distinct_talks": 16,
+      "avg_score": 0.4569,
+      "prompt_chars": 51447,
+      "contains_title_in_response": true,
+      "is_concise": true
+    },
+    "context_preview": [
+      {
+        "talk_id": "955",
+        "title": "How web video powers global innovation",
+        "score": 0.508880675,
+        "chunk_preview": " now could get their ideas to spread far and wide, and so the art of the spoken word pretty much withered on the vine. But now, in the blink..."
+      },
+      {
+        "talk_id": "2485",
+        "title": "TED's secret to great public speaking",
+        "score": 0.494064331,
+        "chunk_preview": "Some people think that there's a TED Talk formula: \"Give a talk on a round, red rug.\" \"Share a childhood story.\" \"Divulge a personal secret...."
+      },
+      {
+        "talk_id": "846",
+        "title": "Lies, damned lies and statistics (about TEDTalks)",
+        "score": 0.491243362,
+        "chunk_preview": "If you go on the TED website, you can currently find there over a full week of TEDTalk videos, over 1.3 million words of transcripts and mil..."
+      }
+    ]
+  },
+  {
+    "name": "key_idea_summary",
+    "ok": true,
+    "response": "Title: Are droids taking our jobs?\n\nSummary of key idea (from the provided transcript): The speaker argues that technology \u2014 especially digital tools and mobile phones \u2014 is improving people's lives, including those at the \u201cbottom of the pyramid.\u201d As evidence, he cites economist Robert Jensen\u2019s study of Kerala fishing villages, where \u201cwhen they got mobile phones for the very first time\u2026 Prices stabilized, so people could plan their economic lives. Waste was not reduced \u2014 it was eliminated. And the lives of both the buyers and the sellers in these villages measurably improved.\u201d He also emphasizes that \u201ceconomies run on ideas\u201d and that technological innovation is becoming \u201cmore open, more inclusive, more transparent and more merit-based,\u201d which further benefits people globally.",
+    "context_count": 20,
+    "compliance": {
+      "distinct_talks": 15,
+      "avg_score": 0.5038,
+      "prompt_chars": 45129,
+      "contains_title_in_response": true,
+      "is_concise": true
+    },
+    "context_preview": [
+      {
+        "talk_id": "2485",
+        "title": "TED's secret to great public speaking",
+        "score": 0.59623909,
+        "chunk_preview": "Some people think that there's a TED Talk formula: \"Give a talk on a round, red rug.\" \"Share a childhood story.\" \"Divulge a personal secret...."
+      },
+      {
+        "talk_id": "846",
+        "title": "Lies, damned lies and statistics (about TEDTalks)",
+        "score": 0.548915863,
+        "chunk_preview": "If you go on the TED website, you can currently find there over a full week of TEDTalk videos, over 1.3 million words of transcripts and mil..."
+      },
+      {
+        "talk_id": "1315",
+        "title": "1,000 TED Talks in six words",
+        "score": 0.538946152,
+        "chunk_preview": "There's currently over a thousand TED Talks on the TED website. And I guess many of you here think that this is quite fantastic, except for ..."
+      }
+    ]
+  },
+  {
+    "name": "recommendation",
+    "ok": true,
+    "response": "I recommend \"The most important thing you can do to fight climate change: talk about it\" by Katharine Hayhoe.\n\nJustification from the retrieved TED content:\n- Hayhoe pairs communication with practical, everyday personal actions: she explicitly lists \"simple solutions that save us money and reduce our carbon footprint at the same time. Yes, light bulbs. I love my plug-in car. I'd like some solar shingles\" and imagines \"a switch beside the front door, that when you left the house, you could turn off everything except your fridge\" ([1]).  \n- She also recommends lifestyle choices people can adopt: \"eating local, eating lower down the food chain and reducing food waste\" ([1]).  \n- She models individual behavior change with her own choices: \"The biggest part of my personal carbon footprint is my travel... I carefully collect my invitations... and I've transitioned nearly three-quarters of the talks I give to video\" ([1]).  \n- And she emphasizes the power of ordinary people talking about climate: \"The number one thing we can do is the exact thing that we're not doing: talk about it\" ([14]/[19]).\n\nThese passages show the talk addresses both how individuals can change daily habits and how personal conversation/action helps drive larger change.",
+    "context_count": 20,
+    "compliance": {
+      "distinct_talks": 11,
+      "avg_score": 0.5366,
+      "prompt_chars": 48211,
+      "contains_title_in_response": true,
+      "is_concise": false
+    },
+    "context_preview": [
+      {
+        "talk_id": "29968",
+        "title": "The most important thing you can do to fight climate change: talk about it",
+        "score": 0.592378616,
+        "chunk_preview": " change supersize our droughts, making them more frequent and more severe. Wherever we live, we're already being affected by a changing clim..."
+      },
+      {
+        "talk_id": "29968",
+        "title": "The most important thing you can do to fight climate change: talk about it",
+        "score": 0.572835863,
+        "chunk_preview": " if we aren't supposed to talk about more science, or if we don't need to talk about more science, then what should we be talking about? The..."
+      },
+      {
+        "talk_id": "29968",
+        "title": "The most important thing you can do to fight climate change: talk about it",
+        "score": 0.571212769,
+        "chunk_preview": " about climate change, because it is absolutely unfair. Those who have contributed the least to the problem are bearing the brunt of the imp..."
+      }
+    ]
+  }
+]

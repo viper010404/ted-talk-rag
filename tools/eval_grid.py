@@ -34,7 +34,7 @@ def run_eval(base_url: str, top_k: int, output_dir: Path, timeout: int = 60) -> 
     
     cmd = [
         sys.executable,
-        "eval_runner.py",
+        str(Path(__file__).parent / "eval_runner.py"),
         "--base-url", base_url,
         "--timeout", str(timeout),
         "--top-k", str(top_k),
